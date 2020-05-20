@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gummy</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="header">
+        <h1 class="header__title">Gummy</h1>
+        <ul class="header__list">
+          <li><a href="">マイページ</a></li>
+          <li><a href="">ログアウト</a></li>
+          <li><a href="">投稿する</a></li>
+          <li><a href="">ログイン</a></li>
+          <li><a href="">新規登録</a></li>
+        </ul>
+      </div>
+    </header>
+    <%= yield %>
+    <footer>
+      <small>&copy; 2020 tukky-14</small>
+    </footer>
+  </body>
+</html>
