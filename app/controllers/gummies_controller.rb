@@ -8,6 +8,7 @@ class GummiesController < ApplicationController
   end
 
   def create
+    Gummy.create(gummy_params)
   end
 
   def edit
@@ -20,5 +21,10 @@ class GummiesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def gummy_params
+    # params.require(:gummy).permit()
   end
 end
