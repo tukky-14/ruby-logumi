@@ -1,24 +1,31 @@
-# README
+# Gummi DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false, index: true|
+|email|string|null: false|
+|password|string|null: false|
+### Association
+- has_many :gummys
+- has_many :commments
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## gummysテーブル
+|Column|Type|Options|
+|------|----|-------|
+|product|text|null: false|
+|content|text|
+|maker|text|
+|image|string|
+|user|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|
+|user|references|null: false, foreign_key: true|
+|gummy|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :gummy
