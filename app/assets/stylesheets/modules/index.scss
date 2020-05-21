@@ -4,7 +4,7 @@
   margin-top: 16px;
 }
 .items__item {
-  width: calc(100% / 3);
+  width: calc(100% / 4);
   margin-bottom: 16px;
 }
 .items__item__title {
@@ -16,6 +16,8 @@
 .items__item__img {
   display: block;
   margin: 0 auto;
+  width: 80%;
+  height: 80%;
 }
 .items__item__list {
   display: flex;
