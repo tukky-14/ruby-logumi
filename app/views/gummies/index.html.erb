@@ -14,7 +14,11 @@
                   <% end %>
                 </li>
               <% end %>
-              <li><i class="fas fa-info-circle"></i></li>
+              <li>
+                <%= link_to gummy_path(gummy) do %>
+                  <i class="fas fa-info-circle"></i>
+                <% end %>
+              </li>
             </ul>
         </div>
       <% end %>

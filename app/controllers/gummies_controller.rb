@@ -23,6 +23,7 @@ class GummiesController < ApplicationController
   end
 
   def show
+    @gummy = Gummy.find(params[:id])
   end
 
   def destroy
