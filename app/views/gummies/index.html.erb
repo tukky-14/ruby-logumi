@@ -7,11 +7,13 @@
           <%= image_tag 'https://picsum.photos/300/300', class: "items__item__img" %>
             <ul class="items__item__list">
               <li><%= gummy.created_at.to_s(:datetime_jp) %></li>
-              <li>
-                <%= link_to edit_gummy_path(gummy) do %>
-                  <i class="far fa-edit"></i>
-                <% end %>
-              </li>
+              <% if user_signed_in? && current_user.id == gummy.user_id %>
+                <li>
+                  <%= link_to edit_gummy_path(gummy) do %>
+                    <i class="far fa-edit"></i>
+                  <% end %>
+                </li>
+              <% end %>
               <li><i class="fas fa-info-circle"></i></li>
             </ul>
         </div>
