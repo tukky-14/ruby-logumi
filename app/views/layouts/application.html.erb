@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,21 +13,21 @@
   <body>
     <header>
       <div class="header">
-        <h1 class="header__title"><%= link_to "Gummi", root_path %></h1>
+        <h1 class="header__title"><%= link_to "Gummii!", root_path %></h1>
         <% if user_signed_in? %>
           <ul class="header__list">
-            <li><%= current_user.name %></li>
-            <li><%= link_to "マイページ" %></li>
-            <li><%= link_to "投稿する", new_gummy_path %></li>
-            <li>
+            <li class="header__list__name"><%= current_user.name %></li>
+            <li class="header__list__select"><%= link_to "マイページ" %></li>
+            <li class="header__list__select"><%= link_to "投稿する", new_gummy_path %></li>
+            <li class="header__list__logout">
             <%= link_to destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %>
               <i class="fas fa-sign-out-alt"></i>
             <% end %>
             </li>
         <% else %>  
           <ul class="header__list">
-            <li><%= link_to "ログイン", new_user_session_path %></li>
-            <li><%= link_to "新規登録", new_user_registration_path %></li>
+            <li class="header__list__select"><%= link_to "ログイン", new_user_session_path %></li>
+            <li class="header__list__select"><%= link_to "新規登録", new_user_registration_path %></li>
           </ul>
         <% end %>
       </div>
