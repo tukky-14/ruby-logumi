@@ -9,6 +9,7 @@ class GummiesController < ApplicationController
 
   def create
     Gummy.create(gummy_params)
+    redirect_to root_path
   end
 
   def edit
@@ -25,6 +26,6 @@ class GummiesController < ApplicationController
 
   private
   def gummy_params
-    # params.require(:gummy).permit()
+    params.require(:gummy).permit(:product, :maker, :image, :content).merge(user_id: current_user.id)
   end
 end
