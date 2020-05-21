@@ -1,2 +1,13 @@
-<h1>Gummies#edit</h1>
-<p>Find me in app/views/gummies/edit.html.erb</p>
+<div class="wrapper">
+  <div class="form">
+    <h4>食べたグミを編集しよう！</h4>
+    <%= form_with model: @gummy do |f| %>
+      <%# <%= f.label :product, "商品" %>
+      <%= f.text_field :product, placeholder: "商品名", class: "form__input" %>
+      <%= f.text_field :maker, placeholder: "メーカー", class: "form__input" %>
+      <%= f.text_field :image, placeholder: "画像", class: "form__input" %>
+      <%= f.text_area :content, rows: "10", placeholder: "レビュー", class: "form__area" %>
+      <%= f.submit "送信", class: "form__btn" %>
+    <% end %>
+  </div>
+</div>

@@ -15,6 +15,7 @@
       <div class="header">
         <h1 class="header__title"><%= link_to "Gummi", root_path %></h1>
         <ul class="header__list">
+          <li><%= current_user.name %></li>
           <li><%= link_to "マイページ" %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           <li><%= link_to "投稿する", new_gummy_path %></li>

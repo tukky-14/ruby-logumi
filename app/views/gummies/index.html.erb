@@ -7,8 +7,12 @@
           <%= image_tag 'https://picsum.photos/300/300', class: "items__item__img" %>
             <ul class="items__item__list">
               <li><%= gummy.created_at.to_s(:datetime_jp) %></li>
-              <li>編集</li>
-              <li>情報</li>
+              <li>
+                <%= link_to edit_gummy_path(gummy) do %>
+                  <i class="far fa-edit"></i>
+                <% end %>
+              </li>
+              <li><i class="fas fa-info-circle"></i></li>
             </ul>
         </div>
       <% end %>

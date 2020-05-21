@@ -13,9 +13,13 @@ class GummiesController < ApplicationController
   end
 
   def edit
+    @gummy = Gummy.find(params[:id])
   end
 
   def update
+    gummy = Gummy.find(params[:id])
+    gummy.update(gummy_params)
+    redirect_to root_path
   end
 
   def show
