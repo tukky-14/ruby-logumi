@@ -1,9 +1,13 @@
 <div class="wrapper">
   <div class="show">
     <div class="show__image">
-      <%= image_tag 'https://picsum.photos/300/300', class: "items__item__img" %>
+      <% if @gummy.image? %>
+        <%= image_tag @gummy.image.url %>
+      <% else %>
+        <%= image_tag "noimage.png", class: "items__item__img" %>
+        <% end %>
     </div>
-
+    
     <div class="show__info">
       <ul class="show__info__list">
         <li>投稿者：<%= @gummy.user.name %></li>
@@ -12,13 +16,19 @@
         <li>メーカー：<%= @gummy.maker %></li>
         <li>レビュー：<%= simple_format(@gummy.content) %></li>
       </ul>
-      <% if user_signed_in? && current_user.id == @gummy.user_id %>
-        <p class="show__info__trash">
-          <%= link_to gummy_path(@gummy), method: :delete, data: {confirm: "削除してもよろしいですか？"} do %>
-            <i class="fas fa-trash-alt"></i>
+        <p class="show__info__menu">
+          <%= link_to root_path do %>
+            <i class="far fa-list-alt icon"></i>
+          <% end %>
+          <% if user_signed_in? && current_user.id == @gummy.user_id %>
+            <%= link_to edit_gummy_path(@gummy) do %>
+              <i class="far fa-edit icon"></i>
+            <% end %>
+            <%= link_to gummy_path(@gummy), method: :delete, data: {confirm: "削除してもよろしいですか？"} do %>
+              <i class="fas fa-trash-alt icon"></i>
+            <% end %>
           <% end %>
         </p>
-      <% end %>
     </div>
   </div>
 </div>

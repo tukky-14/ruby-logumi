@@ -3,20 +3,24 @@
     <div class="items">
       <% @gummies.each do |gummy| %>
         <div class="items__item">
-          <p><%= gummy.user.name %></p>
-          <%= image_tag 'https://picsum.photos/300/300', class: "items__item__img" %>
+          <p><%= gummy.product %></p>
+          <% if gummy.image? %>
+            <%= image_tag gummy.image.url, class: "items__item__img" %>
+          <% else %>
+            <%= image_tag "noimage.png", class: "items__item__img" %>
+          <% end %>
             <ul class="items__item__list">
               <li><%= gummy.created_at.to_s(:datetime_jp) %></li>
               <% if user_signed_in? && current_user.id == gummy.user_id %>
                 <li>
                   <%= link_to edit_gummy_path(gummy) do %>
-                    <i class="far fa-edit"></i>
+                    <i class="far fa-edit icon"></i>
                   <% end %>
                 </li>
               <% end %>
               <li>
                 <%= link_to gummy_path(gummy) do %>
-                  <i class="fas fa-info-circle"></i>
+                  <i class="fas fa-info-circle icon"></i>
                 <% end %>
               </li>
             </ul>

@@ -3,6 +3,7 @@
   text-align: center;
   width: 50%;
   margin: 0 auto;
+  position: relative;
 }
 .form h4 {
   margin-bottom: 16px;
@@ -21,4 +22,13 @@
 .form__btn {
   margin: 0 auto;
   margin-bottom: 16px;
+}
+
+// 編集のみ
+// ------------------------------------
+.form__menu {
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  font-size: 1.3rem;
 }
