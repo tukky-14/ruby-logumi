@@ -1,6 +1,6 @@
 class GummiesController < ApplicationController
   def index
-    @gummies = Gummy.includes(:user)
+    @gummies = Gummy.includes(:user).order("created_at DESC")
   end
 
   def new
