@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gummy</title>
+    <title>Gummi</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,13 +13,13 @@
   <body>
     <header>
       <div class="header">
-        <h1 class="header__title"><%= link_to "Gummy", root_path %></h1>
+        <h1 class="header__title"><%= link_to "Gummi", root_path %></h1>
         <ul class="header__list">
           <li><%= link_to "マイページ" %></li>
-          <li><%= link_to "ログアウト" %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           <li><%= link_to "投稿する", new_gummy_path %></li>
-          <li><%= link_to "ログイン" %></li>
-          <li><%= link_to "新規登録" %></li>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
+          <li><%= link_to "新規登録", new_user_registration_path %></li>
         </ul>
       </div>
     </header>
