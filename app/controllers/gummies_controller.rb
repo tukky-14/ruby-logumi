@@ -27,6 +27,9 @@ class GummiesController < ApplicationController
   end
 
   def destroy
+    gummy = Gummy.find(params[:id])
+    gummy.destroy
+    redirect_to root_path
   end
 
   private

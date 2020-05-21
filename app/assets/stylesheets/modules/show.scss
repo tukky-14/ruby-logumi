@@ -8,7 +8,14 @@
 }
 .show__info {
   width: 60%;
+  position: relative;
 }
 .show__info__list li{
   margin-bottom: 16px;
+}
+.show__info__trash {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 1.3rem;
 }

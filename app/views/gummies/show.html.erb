@@ -12,6 +12,13 @@
         <li>メーカー：<%= @gummy.maker %></li>
         <li>レビュー：<%= simple_format(@gummy.content) %></li>
       </ul>
+      <% if user_signed_in? && current_user.id == @gummy.user_id %>
+        <p class="show__info__trash">
+          <%= link_to gummy_path(@gummy), method: :delete, data: {confirm: "削除してもよろしいですか？"} do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </p>
+      <% end %>
     </div>
   </div>
 </div>
