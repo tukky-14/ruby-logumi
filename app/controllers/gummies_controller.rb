@@ -5,15 +5,21 @@ class GummiesController < ApplicationController
 
   def new
     @gummy = Gummy.new
+    @maker = maker_list
   end
 
   def create
-    Gummy.create(gummy_params)
-    redirect_to root_path
+    @gummy = Gummy.new(gummy_params)
+    if @gummy.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
   def edit
     @gummy = Gummy.find(params[:id])
+    @maker = maker_list
   end
 
   def update
@@ -36,4 +42,12 @@ class GummiesController < ApplicationController
   def gummy_params
     params.require(:gummy).permit(:product, :maker, :image, :content).merge(user_id: current_user.id)
   end
+
+  def maker_list
+    [
+      "UHA味覚党", "KANRO", "meiji", "ブルボン", "カバヤ", "Asahi", "春日井製菓", "不二家", "エイム", "ノーベル",
+      "クリート", "ロッテ", "クラシエフーズ", "森永製菓", "ハリボー", 
+    ]
+  end
+
 end

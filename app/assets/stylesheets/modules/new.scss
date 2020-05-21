@@ -8,13 +8,20 @@
 .form h4 {
   margin-bottom: 16px;
 }
-.form__input {
-  width: 100%;
-  height: 32px;
-  margin: 0 auto;
+.form__list {
+  padding: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 16px;
 }
-.form__area {
+.form__list__input {
+  display: block;
+  width: 80%;
+  height: 32px;
+  line-height: 32px;
+}
+.form__list__area {
   width: 100%;
   margin: 0 auto;
   margin-bottom: 16px;
@@ -22,8 +29,14 @@
 .form__btn {
   margin: 0 auto;
   margin-bottom: 16px;
+  font-size: 2rem;
+  width: 30%;
 }
 
+#gummy_maker {
+  width: 80%;
+  height: 32px;
+}
 // 編集のみ
 // ------------------------------------
 .form__menu {
