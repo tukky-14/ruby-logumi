@@ -1,9 +1,10 @@
 <div class="wrapper">
   <main>
+    <%# <div>※※ここで検索ができるようにする※※</div> %>
     <div class="items">
       <% @gummies.each do |gummy| %>
         <div class="items__item">
-          <p><%= gummy.product %></p>
+          <p class="items__item__title"><%= gummy.product %></p>
           <% if gummy.image? %>
             <%= image_tag gummy.image.url, class: "items__item__img" %>
           <% else %>
