@@ -14,14 +14,22 @@
     <header>
       <div class="header">
         <h1 class="header__title"><%= link_to "Gummi", root_path %></h1>
-        <ul class="header__list">
-          <li><%= current_user.name %></li>
-          <li><%= link_to "マイページ" %></li>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-          <li><%= link_to "投稿する", new_gummy_path %></li>
-          <li><%= link_to "ログイン", new_user_session_path %></li>
-          <li><%= link_to "新規登録", new_user_registration_path %></li>
-        </ul>
+        <% if user_signed_in? %>
+          <ul class="header__list">
+            <li><%= current_user.name %></li>
+            <li><%= link_to "マイページ" %></li>
+            <li><%= link_to "投稿する", new_gummy_path %></li>
+            <li>
+            <%= link_to destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %>
+              <i class="fas fa-sign-out-alt"></i>
+            <% end %>
+            </li>
+        <% else %>  
+          <ul class="header__list">
+            <li><%= link_to "ログイン", new_user_session_path %></li>
+            <li><%= link_to "新規登録", new_user_registration_path %></li>
+          </ul>
+        <% end %>
       </div>
     </header>
     <%= yield %>
