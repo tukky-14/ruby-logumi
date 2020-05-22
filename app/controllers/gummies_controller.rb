@@ -6,6 +6,14 @@ class GummiesController < ApplicationController
   def new
     @gummy = Gummy.new
     @maker = maker_list
+
+    # # リファクタリング
+    # return nil if params[:keyword] == ""
+    # @gummies = Gummy.where(['product LIKE ?', "%#{params[:keyword]}%"] )
+    # respond_to do |format|
+    #   format.html
+    #   format.json
+    # end
   end
 
   def create

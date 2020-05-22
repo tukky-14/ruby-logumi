@@ -52,6 +52,9 @@
 .comments__field__text {
   margin-bottom: 8px;
 }
+.comments__field__text a {
+  color: orange;
+}
 
 .comment-form {
   width: 80%;
@@ -64,6 +67,6 @@
 .comment-form__btn {
   margin: 0 auto;
   width: 30%;
-  background-color:  yellow;
+  background-color:  orange;
   cursor: pointer;
 }
