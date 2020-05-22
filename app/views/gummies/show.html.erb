@@ -10,7 +10,9 @@
     
     <div class="show__info">
       <ul class="show__info__list">
-        <li>投稿者：<%= @gummy.user.name %></li>
+        <li>投稿者：
+          <%= link_to @gummy.user.name, user_path(@gummy.user.id) %>
+        </li>
         <li>投稿日：<%= @gummy.created_at.to_s(:datetime_jp) %></li>
         <li>商品名：<%= @gummy.product %></li>
         <li>メーカー：<%= @gummy.maker %></li>

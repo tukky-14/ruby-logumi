@@ -17,7 +17,7 @@
         <% if user_signed_in? %>
           <ul class="header__list">
             <li class="header__list__name"><%= current_user.name %></li>
-            <li class="header__list__select"><%= link_to "マイページ" %></li>
+            <li class="header__list__select"><%= link_to "マイページ", user_path(current_user.id), method: :get %></li>
             <li class="header__list__select"><%= link_to "投稿する", new_gummy_path %></li>
             <li class="header__list__logout">
             <%= link_to destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %>
