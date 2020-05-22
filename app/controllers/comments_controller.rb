@@ -1,7 +1,13 @@
 class CommentsController < ApplicationController
   def create
-    comment = Comment.create(comment_params)
-    redirect_to "/gummies/#{comment.gummy.id}"
+    @comment = Comment.create(comment_params)
+    if @comment.save
+      respond_to do |format|
+        format.json
+      end
+    else
+      redirect_to "/gummies/#{@comment.gummy.id}"
+    end
   end
 
   private
