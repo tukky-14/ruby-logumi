@@ -5,7 +5,6 @@ class GummiesController < ApplicationController
 
   def new
     @gummy = Gummy.new
-    @maker = maker_list
 
     # # リファクタリング
     # return nil if params[:keyword] == ""
@@ -27,7 +26,6 @@ class GummiesController < ApplicationController
 
   def edit
     @gummy = Gummy.find(params[:id])
-    @maker = maker_list
   end
 
   def update
@@ -50,14 +48,7 @@ class GummiesController < ApplicationController
 
   private
   def gummy_params
-    params.require(:gummy).permit(:product, :maker, :image, :content).merge(user_id: current_user.id)
-  end
-
-  def maker_list
-    [
-      "UHA味覚党", "KANRO", "meiji", "ブルボン", "カバヤ", "Asahi", "春日井製菓", "不二家", "エイム", "ノーベル",
-      "クリート", "ロッテ", "クラシエフーズ", "森永製菓", "ハリボー", "その他"
-    ]
+    params.require(:gummy).permit(:product, :image, :content, :maker_id).merge(user_id: current_user.id)
   end
 
 end

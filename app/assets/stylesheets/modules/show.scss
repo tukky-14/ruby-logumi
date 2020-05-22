@@ -15,6 +15,10 @@
 .show__info__list li{
   margin-bottom: 16px;
 }
+.show__info__list--maker {
+  text-decoration: underline;
+  color: blue;
+}
 .show__info__list--review {
   display: block;
   margin-top: 8px;
