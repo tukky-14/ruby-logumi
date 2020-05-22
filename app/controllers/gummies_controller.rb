@@ -30,6 +30,8 @@ class GummiesController < ApplicationController
 
   def show
     @gummy = Gummy.find(params[:id])
+    @comment = Comment.new
+    @comments = @gummy.comments.includes(:user)
   end
 
   def destroy
@@ -46,7 +48,7 @@ class GummiesController < ApplicationController
   def maker_list
     [
       "UHA味覚党", "KANRO", "meiji", "ブルボン", "カバヤ", "Asahi", "春日井製菓", "不二家", "エイム", "ノーベル",
-      "クリート", "ロッテ", "クラシエフーズ", "森永製菓", "ハリボー", 
+      "クリート", "ロッテ", "クラシエフーズ", "森永製菓", "ハリボー", "その他"
     ]
   end
 

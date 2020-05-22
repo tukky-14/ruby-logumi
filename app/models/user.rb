@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :gummies
+  has_many :comments
   validates :name, presence: true, uniqueness: true
 end

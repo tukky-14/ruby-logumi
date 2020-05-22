@@ -33,4 +33,30 @@
         </p>
     </div>
   </div>
+
+  <div class="container">
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <div class="comments__field">
+        <% if @comments %>
+          <% @comments.each do |comment| %>
+            <p class="comments__field__text">
+              <%= link_to comment.user.name, "/users/#{comment.user_id}" %>：
+              <%= comment.text %>
+            </p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="comment-form">
+      <% if current_user %>
+        <%= form_with model: [@gummy, @comment] do |f| %>
+          <%= f.text_area :text, rows: "3", placeholder: "コメントする", class: "comment-form__text" %>
+          <%= f.submit "送信", class: "comment-form__btn" %>
+        <% end %>
+      <% else %>
+        <p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
+      <% end %>
+    </div>
+  </div>
 </div>
