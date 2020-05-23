@@ -11,7 +11,7 @@
     <div class="show__info">
       <ul class="show__info__list">
         <li>投稿者：
-          <%= link_to @gummy.user.name, user_path(@gummy.user.id) %>
+          <%= link_to @gummy.user.name, user_path(@gummy.user.id), class: "show__info__list__name" %>
         </li>
         <li>投稿日：<%= @gummy.created_at.to_s(:datetime_jp) %></li>
         <li>商品名：<%= @gummy.product %></li>
@@ -46,7 +46,7 @@
           <% @comments.each do |comment| %>
             <p class="comments__field__text">
               <%= link_to comment.user.name, "/users/#{comment.user_id}" %>：
-              <%= comment.text %>
+              <%= simple_format(comment.text) %>
             </p>
           <% end %>
         <% end %>

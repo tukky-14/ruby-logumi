@@ -1,6 +1,12 @@
 <div class="wrapper">
   <main>
-    <% # <div>※※ここで検索ができるようにする※※</div> %>
+    <div class="search">
+    <%= form_with(local: true, method: :get, class: "") do |f| %>
+      <%= f.text_field :keyword, placeholder: "グミを検索する", class: "search-input" %>
+      <%= f.submit "検索", class: "search-btn" %>
+    <% end %>
+
+    </div>
     <div class="items">
       <% @gummies.each do |gummy| %>
         <div class="items__item">

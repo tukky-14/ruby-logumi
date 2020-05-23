@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="items">
-    <p><%= @name %>さんの全<%= @gummies.count %>件の投稿</p>
+    <p class="items__count"><i class="fas fa-list"></i> <%= @name %>さんの全<%= @gummies.count %>件の投稿</p>
     <div class="items">
       <% @gummies.each do |gummy| %>
         <div class="items__item">
