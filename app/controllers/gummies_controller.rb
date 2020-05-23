@@ -6,7 +6,7 @@ class GummiesController < ApplicationController
   def new
     @gummy = Gummy.new
 
-    # # リファクタリング
+    # # 新規投稿画面でのインクリメンタルサーチ実装検討
     # return nil if params[:keyword] == ""
     # @gummies = Gummy.where(['product LIKE ?', "%#{params[:keyword]}%"] )
     # respond_to do |format|
