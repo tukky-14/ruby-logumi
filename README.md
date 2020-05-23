@@ -1,31 +1,11 @@
-# Gummi DB設計
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, index: true|
-|email|string|null: false|
-|password|string|null: false|
-### Association
-- has_many :gummys
-- has_many :commments
+# logumi
+このアプリはグミを登録していくアプリケーションです。
 
-## gummysテーブル
-|Column|Type|Options|
-|------|----|-------|
-|product|text|null: false|
-|content|text|
-|maker|text|
-|image|string|
-|user|references|null: false, foreign_key: true|
-### Association
-- belongs_to :user
+## できること
+・グミを保存してリスト化
+・他の人が登録した新しいグミとの出会い
+・グミ好き同士での交流
 
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|
-|user|references|null: false, foreign_key: true|
-|gummy|references|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :gummy
+## 使い方
+1. ユーザー登録をする
+2. グミを登録していく
