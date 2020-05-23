@@ -40,6 +40,10 @@ class GummiesController < ApplicationController
     @comments = @gummy.comments.includes(:user)
   end
 
+  def search
+    @gummies = Gummy.search(params[:keyword])
+  end
+
   def destroy
     gummy = Gummy.find(params[:id])
     gummy.destroy
