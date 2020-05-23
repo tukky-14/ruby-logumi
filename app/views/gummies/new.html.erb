@@ -8,7 +8,7 @@
       </p>
       <p class="form__list">
         <%= f.label :product, "製造元：", class: "form__list__label" %>
-        <%= f.collection_select(:maker_id, Maker.all, :id, :maker,{prompt: "グミのメーカーを選択してください"},{class: "form__list__input"}) %>
+        <%= f.collection_select(:maker_id, Maker.all, :id, :maker, { prompt: "グミのメーカーを選択してください" }, { class: "form__list__input" }) %>
       </p>
       <p class="form__list">
         <%= f.label :product, "　画像：", class: "form__list__label" %>
@@ -16,7 +16,7 @@
       </p>
       <%= f.label :product, "レビュー：", class: "form__list__label" %>
       <%= f.text_area :content, rows: "10", placeholder: "例）うまい！うまいうまい！", class: "form__list__area" %>
-      <%= f.submit "送信", class: "form__btn" %>
+      <%= f.submit "送信", class: "form__btn", data: { disable_with: "と・・・" } %>
     <% end %>
   </div>
 </div>

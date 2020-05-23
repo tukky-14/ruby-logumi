@@ -8,7 +8,7 @@
       </p>
       <p class="form__list">
         <%= f.label :product, "製造元：", class: "form__list__label" %>
-        <%= f.collection_select(:maker_id, Maker.all, :id, :maker,{prompt: "グミのメーカーを選択してください"},{class: "form__list__input"}) %>
+        <%= f.collection_select(:maker_id, Maker.all, :id, :maker, { prompt: "グミのメーカーを選択してください" }, { class: "form__list__input" }) %>
       </p>
       <p class="form__list">
         <%= f.label :product, "　画像：", class: "form__list__label" %>
@@ -24,7 +24,7 @@
           <%= link_to root_path do %>
             <i class="far fa-list-alt icon"></i>
           <% end %>
-          <%= link_to gummy_path(@gummy), method: :delete, data: {confirm: "削除してもよろしいですか？"} do %>
+          <%= link_to gummy_path(@gummy), method: :delete, data: { confirm: "削除してもよろしいですか？" } do %>
             <i class="fas fa-trash-alt icon"></i>
           <% end %>
         </p>

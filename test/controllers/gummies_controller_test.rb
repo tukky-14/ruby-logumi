@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class GummiesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
@@ -35,5 +35,4 @@ class GummiesControllerTest < ActionDispatch::IntegrationTest
     get gummies_destroy_url
     assert_response :success
   end
-
 end

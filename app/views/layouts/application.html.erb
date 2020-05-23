@@ -5,10 +5,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= favicon_link_tag('favicon.ico') %>
+    <%= favicon_link_tag("favicon.ico") %>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
   </head>
 
   <body>
@@ -21,7 +21,7 @@
             <li class="header__list__select"><%= link_to "マイページ", user_path(current_user.id), method: :get %></li>
             <li class="header__list__select"><%= link_to "投稿する", new_gummy_path %></li>
             <li class="header__list__logout">
-            <%= link_to destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %>
+            <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } do %>
               <i class="fas fa-sign-out-alt"></i>
             <% end %>
             </li>

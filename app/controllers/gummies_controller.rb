@@ -20,7 +20,7 @@ class GummiesController < ApplicationController
     if @gummy.save
       redirect_to root_path
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -47,8 +47,8 @@ class GummiesController < ApplicationController
   end
 
   private
+
   def gummy_params
     params.require(:gummy).permit(:product, :image, :content, :maker_id).merge(user_id: current_user.id)
   end
-
 end
