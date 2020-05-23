@@ -4,44 +4,47 @@
   width: 50%;
   margin: 0 auto;
   position: relative;
-}
-.form h4 {
-  margin-bottom: 16px;
-}
-.form__list {
-  padding: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 16px;
-}
-.form__list__input {
-  display: block;
-  width: 80%;
-  height: 32px;
-  line-height: 32px;
-}
-.form__list__area {
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom: 16px;
-}
-.form__btn {
-  margin: 0 auto;
-  margin-bottom: 16px;
-  font-size: 2rem;
-  width: 30%;
+  & h4 {
+    margin-bottom: 16px;
+  }
+  &__list {
+    padding: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    &__input {
+      display: block;
+      width: 80%;
+      height: 32px;
+      line-height: 32px;
+    }
+    &__area {
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 16px;
+    }
+  }
+  &__btn {
+    margin: 0 auto;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    width: 15%;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: $main-color;
+  }
+  // 編集のみ
+  // ------------------------------------
+  &__menu {
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+    font-size: 1.3rem;
+  }
 }
 
 #gummy_maker {
   width: 80%;
   height: 32px;
-}
-// 編集のみ
-// ------------------------------------
-.form__menu {
-  position: absolute;
-  bottom: 5px;
-  right: 15px;
-  font-size: 1.3rem;
 }
