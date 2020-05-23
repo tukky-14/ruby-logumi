@@ -1,7 +1,7 @@
 <div class="wrapper">
   <main>
     <div class="search">
-    <%= form_with(url: search_gummies_path, local: true, method: :get, class: "") do |f| %>
+    <%= form_with(url: search_gummies_path, local: true, method: :get, class: "search__input") do |f| %>
       <%= f.text_field :keyword, placeholder: "グミを検索する", class: "search-input" %>
       <%= f.submit "検索", class: "search-btn" %>
     <% end %>

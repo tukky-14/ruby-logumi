@@ -41,7 +41,11 @@ class GummiesController < ApplicationController
   end
 
   def search
-    @gummies = Gummy.search(params[:keyword])
+    @gummies = Gummy.search(params[:keyword]).order("created_at DESC")
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def destroy
