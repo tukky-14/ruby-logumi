@@ -11,10 +11,12 @@
       <% @gummies.each do |gummy| %>
         <div class="items__item">
           <p class="items__item__title"><%= gummy.product %></p>
-          <% if gummy.image? %>
-            <%= image_tag gummy.image.url, class: "items__item__img" %>
-          <% else %>
-            <%= image_tag "noimage.png", class: "items__item__img" %>
+          <%= link_to gummy_path(gummy) do %>
+            <% if gummy.image? %>
+              <%= image_tag gummy.image.url, class: "items__item__img" %>
+            <% else %>
+              <%= image_tag "noimage.png", class: "items__item__img" %>
+            <% end %>
           <% end %>
             <ul class="items__item__list">
               <li><%= gummy.created_at.to_s(:datetime_jp) %></li>
@@ -25,11 +27,6 @@
                   <% end %>
                 </li>
               <% end %>
-              <li>
-                <%= link_to gummy_path(gummy) do %>
-                  <i class="fas fa-info-circle icon"></i>
-                <% end %>
-              </li>
             </ul>
         </div>
       <% end %>

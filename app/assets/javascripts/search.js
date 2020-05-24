@@ -23,15 +23,12 @@ $(function() {
 
     let html = `<div class="items__item">
                   <p class="items__item__title">${gummy.product}</p>
-                  ${gummyImage}                  
+                  <a href="/gummies/${gummy.id}">
+                    ${gummyImage}                  
+                  </a>
                   <ul class="items__item__list">
                     <li>${gummy.created_at}</li>
                     ${current_user}
-                    <li>
-                      <a href="/gummies/${gummy.id}">
-                        <i class="fas fa-info-circle icon"></i>
-                      </a>
-                    </li>
                   </ul>
                 </div>`
     search_list.append(html);
