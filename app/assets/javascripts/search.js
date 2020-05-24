@@ -2,7 +2,7 @@ $(function() {
 
   let search_list = $('.items'); 
 
-  // サインインしていたら編集アイコンをひょうじさせる
+  // サインインしていたら編集アイコンを表示させる
   function appendGummy(gummy) {
     if (gummy.user_sign_in && gummy.user_sign_in.id == gummy.user_id) {
       var current_user = `<li>
@@ -14,7 +14,7 @@ $(function() {
       var current_user = ""
     }
 
-    // 画像がなかったらnoimage.pngを表示させたい
+    // 【To do】画像がなかったらnoimage.pngを表示させたい
     if (gummy.image.url === null) {
       var gummyImage = `<img src="/assets/images/noimage.png" class="items__item__img">`
     } else {
