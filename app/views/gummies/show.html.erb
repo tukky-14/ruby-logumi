@@ -46,7 +46,7 @@
           <% @comments.each do |comment| %>
             <p class="comments__field__text">
               <%= link_to comment.user.name, "/users/#{comment.user_id}" %>：
-              <%= simple_format(comment.text) %>
+              <%= comment.text %>
             </p>
           <% end %>
         <% end %>
