@@ -30,7 +30,7 @@ a {
 
 // 変数、mixin
 // ------------------------------------
-$main-color: rgb(166, 255, 0);
+$main-color: #8ED1E0;
 
 // fontawesomeアイコンでiconクラスすべて
 // ------------------------------------
@@ -68,7 +68,7 @@ header {
       padding: 8px 16px;
       font-size: 1.1rem;
       border: 1px solid #000;
-      border-radius: 5%;
+      border-radius: 50%;
       background-color: $main-color;
       opacity: 0.7;
       cursor: pointer;
