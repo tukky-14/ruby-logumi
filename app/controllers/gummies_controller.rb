@@ -1,8 +1,11 @@
 class GummiesController < ApplicationController
   before_action :set_gummy, only: [:edit, :update, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-    @gummies = Gummy.includes(:user).order("created_at DESC")
+    @q = Gummy.ransack(params[:q])
+    @gummies = @q.result.includes(:user).order("created_at DESC")
+    # @gummies = Gummy.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -51,5 +54,9 @@ class GummiesController < ApplicationController
 
   def set_gummy
     @gummy = Gummy.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end

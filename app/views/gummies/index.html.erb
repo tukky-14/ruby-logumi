@@ -1,12 +1,25 @@
 <div class="wrapper">
   <main>
-    <div class="search">
-    <%= form_with(url: search_gummies_path, local: true, method: :get, class: "search__input") do |f| %>
-      <%= f.text_field :keyword, placeholder: "グミを検索する", class: "search-input" %>
-      <%= f.submit "検索", class: "search-btn" %>
-    <% end %>
+    <div class="search-wrapper">
+      <div class="search">
+        <%= form_with(url: search_gummies_path, local: true, method: :get, class: "search__input") do |f| %>
+          <%= f.text_field :keyword, placeholder: "グミを検索する", class: "search-input" %>
+          <%= f.submit "検索", class: "search-btn" %>
+        <% end %>
+      </div>
 
+      <div class="sort">
+        <table>
+          <tr>
+            <th><%= sort_link(@q, :product, "商品名") %></th>
+            <th><%= sort_link(@q, :created_at, "投稿日", default_order: :desc) %></th>
+            <th><%= sort_link(@q, :user_id, "ユーザ") %></th>
+            <th><%= sort_link(@q, :maker, "メーカー") %></th>
+          </tr>
+        </table>
+      </div>
     </div>
+
     <div class="items">
       <% @gummies.each do |gummy| %>
         <div class="items__item">
