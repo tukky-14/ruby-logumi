@@ -15,8 +15,11 @@
     }
     &__list__name,
     &__list--maker {
-      text-decoration: underline;
       color: blue;
+    }
+    &__list__name:hover,
+    &__list--maker:hover {
+      text-decoration: underline;
     }
     &__list--review {
       display: block;
