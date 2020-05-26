@@ -12,15 +12,15 @@
   box-shadow: 5px 5px 5px;
   &__main {
     width: 70%;
-    padding: 32px 16px 0;
+    padding: 32px 16px;
   }
   &__side {
     width: 30%;
-    padding: 32px 16px 0;
+    padding: 32px 16px;
   }
 }
-.news-main__title,
-.news-side__title {
+.news__main__title,
+.news__side__title {
   font-size: 0.8rem;
   padding: 8px 0;
   text-align: center;
