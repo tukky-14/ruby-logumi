@@ -68,3 +68,4 @@ gem "mini_magick"
 gem "jquery-rails"
 gem "rufo"
 gem 'ransack'
+gem 'kaminari'

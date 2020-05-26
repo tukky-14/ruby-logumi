@@ -4,7 +4,7 @@ class GummiesController < ApplicationController
 
   def index
     @q = Gummy.ransack(params[:q])
-    @gummies = @q.result.includes(:user).order("created_at DESC")
+    @gummies = @q.result.includes(:user).order("created_at DESC").page(params[:page]).per(10)
     # ransack導入前
     # @gummies = Gummy.includes(:user).order("created_at DESC")
   end
