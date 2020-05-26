@@ -1,0 +1,31 @@
+.news-title {
+  text-align: center;
+  padding: 8px;
+}
+.news {
+  display: flex;
+  height: 100vh;
+  overflow: scroll;
+  border: 1px solid #000;
+  margin: 0 0 16px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px;
+  &__main {
+    width: 70%;
+    padding: 32px 16px 0;
+  }
+  &__side {
+    width: 30%;
+    padding: 32px 16px 0;
+  }
+}
+.news-main__title,
+.news-side__title {
+  font-size: 0.8rem;
+  padding: 8px 0;
+  text-align: center;
+  font-weight: bold;
+}
+iframe {
+  height: 600px;
+}

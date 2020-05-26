@@ -1,12 +1,19 @@
-// @import "bootstrap";
+// 全体
 @import "reset.scss";
 @import "variables.scss";
-@import "modules/flash.scss";
+
+// gem関連
+@import "font-awesome-sprockets";
+@import "font-awesome";
+// Bootstrap使用検討中
+// @import "bootstrap";
+
+// devise関連
+@import "modules/devise/*";
+
 @import "modules/common.scss";
 @import "modules/index.scss";
 @import "modules/new.scss";
+@import "modules/news.scss";
 @import "modules/show.scss";
-@import "modules/users.scss";
 @import "modules/usershow.scss";
-@import "font-awesome-sprockets";
-@import "font-awesome";
