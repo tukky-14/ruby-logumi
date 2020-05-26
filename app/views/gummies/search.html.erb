@@ -1,38 +1,14 @@
 <div class="wrapper">
   <main>
     <div class="search">
-    <%= form_with(url: search_gummies_path, local: true, method: :get, class: "") do |f| %>
-      <%= f.text_field :keyword, placeholder: "グミを検索する", class: "search-input" %>
-      <%= f.submit "検索", class: "search-btn" %>
-    <% end %>
-
-    </div>
-    <div class="items">
-      <% @gummies.each do |gummy| %>
-        <div class="items__item">
-          <p class="items__item__title"><%= gummy.product %></p>
-          <% if gummy.image? %>
-            <%= image_tag gummy.image.url, class: "items__item__img" %>
-          <% else %>
-            <%= image_tag "noimage.png", class: "items__item__img" %>
-          <% end %>
-            <ul class="items__item__list">
-              <li><%= gummy.created_at.to_s(:datetime_jp) %></li>
-              <% if user_signed_in? && current_user.id == gummy.user_id %>
-                <li>
-                  <%= link_to edit_gummy_path(gummy) do %>
-                    <i class="far fa-edit icon"></i>
-                  <% end %>
-                </li>
-              <% end %>
-              <li>
-                <%= link_to gummy_path(gummy) do %>
-                  <i class="fas fa-info-circle icon"></i>
-                <% end %>
-              </li>
-            </ul>
-        </div>
+      <%= form_with(url: search_gummies_path, local: true, method: :get, class: "") do |f| %>
+        <%= f.text_field :keyword, placeholder: "グミを検索する", class: "search-input" %>
+        <%= f.submit "検索", class: "search-btn" %>
       <% end %>
+    </div>
+
+    <div class="items">
+      <%= render "gummies" %>
     </div>
   </main>
 </div>
