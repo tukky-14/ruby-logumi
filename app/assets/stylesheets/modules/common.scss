@@ -85,3 +85,16 @@ footer {
   line-height: 30px;
   font-size: 0.8rem;
 }
+
+// ページネーション
+// ------------------------------------
+.pagination {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.next a:hover,
+.last a:hover,
+.page a:hover {
+  color: blue;
+  text-decoration: underline;
+}
