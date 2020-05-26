@@ -43,6 +43,12 @@ class GummiesController < ApplicationController
     end
   end
 
+  def news
+  end
+
+  def about
+  end
+
   def destroy
     Gummy.find(params[:id]).destroy
     redirect_to root_path

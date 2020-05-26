@@ -36,7 +36,18 @@
     </header>
     <%= yield %>
     <footer>
-      <small>&copy; 2020 tukky-14</small>
+      <div class="menu">
+        <ul class="menu__list">
+          <li>
+          <%= link_to "NEWS", news_gummies_path, class: "menu__list__info" %>
+          </li>
+          <li>
+          <%= link_to "ABOUT", about_gummies_path, class: "menu__list__info" %>
+          </li>
+        </ul>
+        <hr>
+      </div>
+        <small>&copy; 2020 tukky-14</small>
     </footer>
   </body>
 </html>
