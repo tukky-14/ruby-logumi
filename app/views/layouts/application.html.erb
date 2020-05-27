@@ -12,42 +12,57 @@
   </head>
 
   <body>
-    <%= render 'layouts/notifications' %>
-    <header>
-      <div class="header">
-        <h1 class="header__title"><%= link_to "Logumi", root_path %></h1>
-        <% if user_signed_in? %>
-          <ul class="header__list">
-            <li class="header__list__name"><%= current_user.name %></li>
-            <li class="header__list__select"><%= link_to "マイページ", user_path(current_user.id), method: :get %></li>
-            <li class="header__list__select"><%= link_to "投稿する", new_gummy_path %></li>
-            <li class="header__list__logout">
-            <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } do %>
-              <i class="fas fa-sign-out-alt"></i>
-            <% end %>
+    <!-- <div class="container"> -->
+      <%= render 'layouts/notifications' %>
+      <header>
+        <div class="header">
+          <h1 class="header__title"><%= link_to "Logumi", root_path %></h1>
+          <% if user_signed_in? %>
+            <ul class="header__list">
+              <li class="header__list__name"><%= current_user.name %></li>
+              <%= link_to  user_path(current_user.id), method: :get do %>
+                <li class="header__list__select">マイページ</li>
+              <% end %>
+              <%= link_to  new_gummy_path, method: :get do %>
+                <li class="header__list__select">投稿する</li>
+              <% end %>
+              <li class="header__list__logout">
+              <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } do %>
+                <i class="fas fa-sign-out-alt"></i>
+              <% end %>
+              </li>
+          <% else %>  
+            <ul class="header__list">
+              <%= link_to  new_user_session_path, method: :get do %>
+                <li class="header__list__select">ログイン</li>
+              <% end %>
+              <%= link_to  new_user_registration_path, method: :get do %>
+                <li class="header__list__select">新規登録</li>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+      </header>
+      <%= yield %>
+      <footer>
+        <div class="menu">
+          <ul class="menu__list">
+            <li>
+            <%= link_to "HOME　|", root_path, class: "menu__list__info" %>
             </li>
-        <% else %>  
-          <ul class="header__list">
-            <li class="header__list__select"><%= link_to "ログイン", new_user_session_path %></li>
-            <li class="header__list__select"><%= link_to "新規登録", new_user_registration_path %></li>
+            <li>
+            <%= link_to "ABOUT　|", about_gummies_path, class: "menu__list__info" %>
+            </li>
+            <li>
+            <%= link_to "NEWS　|", news_gummies_path, class: "menu__list__info" %>
+            </li>
+            <li>
+            <%= link_to "OTHER", root_path, class: "menu__list__info" %>
+            </li>
           </ul>
-        <% end %>
-      </div>
-    </header>
-    <%= yield %>
-    <footer>
-      <div class="menu">
-        <ul class="menu__list">
-          <li>
-          <%= link_to "NEWS", news_gummies_path, class: "menu__list__info" %>
-          </li>
-          <li>
-          <%= link_to "ABOUT", about_gummies_path, class: "menu__list__info" %>
-          </li>
-        </ul>
-        <hr>
-      </div>
-        <small>&copy; 2020 tukky-14</small>
-    </footer>
+        </div>
+          <small>&copy; 2020 tukky-14</small>
+      </footer>
+    <!-- </div> -->
   </body>
 </html>

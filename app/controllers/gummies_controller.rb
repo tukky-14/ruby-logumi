@@ -1,6 +1,6 @@
 class GummiesController < ApplicationController
   before_action :set_gummy, only: [:edit, :update, :show]
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :move_to_about, except: [:show, :search, :news, :about]
 
   def index
     @q = Gummy.ransack(params[:q])
@@ -63,7 +63,7 @@ class GummiesController < ApplicationController
     @gummy = Gummy.find(params[:id])
   end
 
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
+  def move_to_about
+    redirect_to about_gummies_path unless user_signed_in?
   end
 end
