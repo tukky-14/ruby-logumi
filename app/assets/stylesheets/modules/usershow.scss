@@ -1,3 +1,11 @@
+.profile-name {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+// プロフィール
+// ------------------------------------
 .usershow {
   display: flex;
   padding: 16px;
@@ -6,17 +14,25 @@
 .profile {
   width: 40%;
   text-align: center;
+  &__img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 16px;
+    border-radius: 50%;
+  }
 }
-.profile__img {
-  width: 200px;
-  height: 200px;
-  margin-top: 64px;
-}
-.profile ul li:nth-child(even) {
+.profile__info li {
   margin-bottom: 8px;
 }
+.profile-edit {
+  color: blue;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 
-
+// ユーザーの投稿一覧
+// ------------------------------------
 .contents {
   width: 60%;
   &__count {
@@ -27,6 +43,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 16px;
+  overflow: scroll;
   &__item {
     width: calc(100% / 4);
     padding: 8px;

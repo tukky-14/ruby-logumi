@@ -1,17 +1,25 @@
 <div class="wrapper">
-  <div class="usershow">
+  <h2 class="profile-name"><strong><i class="fas fa-user-circle"></i> <%= @name %>さんのマイページ</strong></h2>
+  <hr>
 
+  <div class="usershow">
     <div class="profile">
-      <%= image_tag 'https://picsum.photos/200/300', class: "profile__img" %>
       <ul class="profile__info">
-        <li> < 名前 > </li>
-        <li><%= @name %></li>
-        <li> < 好きなグミ > </li>
-        <li>つぶグミ</li>
-        <li> < 自己紹介 > </li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit facere saepe amet pariatur laborum nobis doloribus hic at accusamus ullam fuga quis iusto ipsum, delectus aperiam alias voluptate rem libero!</li>
+        <%- if @image.url %>
+          <li><%= image_tag @image.url, class: "profile__img" %></li>
+        <% else %>
+          <li><%= image_tag "noimage.png", class: "profile__img" %></li>
+        <% end %>
+        <li>【好きなグミ】</li>
+        <li><%= @like %></li><br>
+        <li> 【自己紹介】</li>
+        <li><%= simple_format(@introduction) %></li><br>
       </ul>
-      <p>編集</p>
+      <% if user_signed_in? && current_user.id == @user_id %>
+        <%= link_to edit_user_registration_path	do %>
+          <p class="profile-edit">編集</p>
+        <% end %>
+      <% end %>
     </div>
 
     <div class="contents">
@@ -42,4 +50,5 @@
       </div>
     </div>
   </div>
+
 </div>
