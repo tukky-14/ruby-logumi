@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'search'
       get 'news'
       get 'about'
+      get 'other'
     end
   end
   resources :users, only: :show
