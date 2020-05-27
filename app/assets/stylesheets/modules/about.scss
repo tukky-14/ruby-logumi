@@ -1,0 +1,54 @@
+.about-site {
+  padding: 24px;
+  color: #494949;
+}
+.about-site__title {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  padding: 0.25em 0.5em;/*上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: transparent;/*背景透明に*/
+  border-left: solid 5px #7db4e6;/*左線*/
+}
+.about-site__text {
+  color: #494949;/*文字色*/
+  line-height: 1.7rem;
+  padding-left: 1rem;
+}
+.about-site__img {
+  display: block;
+  // margin: 0 auto;
+  width: 50%;
+  margin-bottom: 8px;
+}
+.about-site ul li{
+  color: #494949;
+  list-style: inside;
+  padding-left: 2rem;
+}
+
+.registration {
+  text-align: center;
+}
+.registration__text {
+  color: #494949;
+  margin-bottom: 16px;
+}
+.registration__btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-bottom: 32px;
+  font-size: 1.1rem;
+  color: #494949;
+  text-decoration: none;
+  background: $main-color;
+  border-bottom: solid 4px #627295;
+  border-radius: 5px;
+  cursor: pointer;
+  &:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
+}
