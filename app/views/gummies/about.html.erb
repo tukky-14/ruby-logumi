@@ -1,5 +1,29 @@
 <div class="wrapper">
-  このサイトについて
-  グミの魅力
-  グミの種類
+  <div class="about-site">
+    <h2 class="about-site__title">Logumiについて</h2>
+    <%= image_tag 'about.jpg', class: "about-site__img" %>
+    <p class="about-site__text">Logumiは食べたグミを登録して共有する、グミ好きのためのWebアプリケーションです。<br>
+    あなたのグミを記録したマイページは、カラフルなグミに染まっていきます。<br>
+    また、グミ好き仲間の投稿から新たなグミとの出会いが生まれることでしょう。</p>
+  </div>
+
+  <div class="about-site">
+    <h2 class="about-site__title">グミの魅力</h2>
+    <%= image_tag 'charm.jpg', class: "about-site__img" %>
+    <p class="about-site__text">ガムに変わって人気急上昇のグミ。こんな魅力があります。</p>
+    <ul>
+      <li>カラフルで楽しい</li>
+      <li>いろんな食感・いろんな味を体験できる</li>
+      <li>手が汚れずに食べることができる</li>
+    </ul>
+  </div>
+
+  <div class="registration">
+    <p class="registration__text">いろんなグミを一緒に楽しみましょう！！</p>
+      <%= link_to new_user_registration_path do %>
+        <button class="registration__btn">
+        新規登録する
+        </button>
+      <% end %>
+  </div>
 </div>

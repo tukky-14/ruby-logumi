@@ -21,7 +21,7 @@ a {
   color: #000;
 }
 
-// 【To do】フッター固定材料
+// 【To do】フッター固定材料。なぜpadding16pxが当たるのか
 // .container {
 //   min-height: 100vh;
 //   min-width: 100%;
@@ -73,7 +73,7 @@ header {
       padding: 8px 16px;
       font-size: 1.1rem;
       border: 1px solid #000;
-      border-radius: 50%;
+      border-radius: 5px;
       background-color: $main-color;
       opacity: 0.7;
       cursor: pointer;
@@ -97,26 +97,23 @@ footer {
 .menu {
   width: 70%;
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
   padding-top:16px;
   &__list {
     display: flex;
+    justify-content: center;
     &__info {
       color: blue;
-      margin-right: 16px;
-      &:hover {
-        text-decoration: underline;
-      }
+      margin-right: 12px;
     }
   }
 }
 
 small {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   right: 0;
   left: 0;
-  margin-top: 8px;
 }
 
 // ページネーション
