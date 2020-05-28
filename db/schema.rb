@@ -29,7 +29,8 @@ ActiveRecord::Schema.define(version: 2020_05_27_090851) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "maker_id"
+    t.bigint "maker_id", null: false
+    t.index ["maker_id"], name: "index_gummies_on_maker_id"
     t.index ["product"], name: "index_gummies_on_product", length: 32
     t.index ["user_id"], name: "index_gummies_on_user_id"
   end
@@ -60,5 +61,6 @@ ActiveRecord::Schema.define(version: 2020_05_27_090851) do
 
   add_foreign_key "comments", "gummies"
   add_foreign_key "comments", "users"
+  add_foreign_key "gummies", "makers"
   add_foreign_key "gummies", "users"
 end

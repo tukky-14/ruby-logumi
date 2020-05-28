@@ -1,5 +1,5 @@
 class AddMakerIdToGummies < ActiveRecord::Migration[5.2]
   def change
-    add_column :gummies, :maker_id, :integer
+    add_reference :gummies, :maker, null: false, foreign_key: true
   end
 end
