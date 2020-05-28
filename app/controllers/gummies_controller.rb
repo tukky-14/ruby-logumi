@@ -1,6 +1,6 @@
 class GummiesController < ApplicationController
   before_action :set_gummy, only: [:edit, :update, :show]
-  before_action :move_to_about, except: [:show, :search, :news, :about]
+  # before_action :move_to_about, except: [:show, :search, :news, :about]
 
   def index
     @q = Gummy.ransack(params[:q])
