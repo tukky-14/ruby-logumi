@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
-  database: gummi_production
-  username: gummi
-  password: <%= ENV['GUMMI_DATABASE_PASSWORD'] %>
+  # database: gummi_production
+  # username: gummi
+  # password: <%= ENV['GUMMI_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
