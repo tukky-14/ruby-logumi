@@ -30,9 +30,9 @@
             <p class="useritems__item__title"><%= gummy.product %></p>
             <%= link_to gummy_path(gummy) do %>
               <% if gummy.image? %>
-                <%= image_tag gummy.image.url, class: "useritems__item__img" %>
+                <%= image_tag gummy.image.url,size: "80x120",  class: "useritems__item__img" %>
               <% else %>
-                <%= image_tag "noimage.png", class: "useritems__item__img" %>
+                <%= image_tag "noimage.png",size: "80x120", class: "useritems__item__img" %>
               <% end %>
             <% end %>
               <ul class="useritems__item__list">

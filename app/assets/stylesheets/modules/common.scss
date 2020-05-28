@@ -21,15 +21,14 @@ a {
   color: #000;
 }
 
-// 【To do】フッター固定材料。なぜpadding16pxが当たるのか
-// .container {
-//   min-height: 100vh;
-//   min-width: 100%;
-//   position: relative;
-//   padding-bottom: 60px;
-//   padding: 0;
-// }
-
+.contain {
+  padding: 0;
+  min-height: 100vh;
+  min-width: 100%;
+  position: relative;
+  padding-bottom: 60px;
+  padding: 0;
+}
 .wrapper {
   width: 80%;
   height: 100%;
@@ -92,7 +91,8 @@ footer {
   background-color: #F2F2F3;
   text-align: center;
   font-size: 0.8rem;
-  position: relative;
+  position: absolute;
+  bottom: -72px;
 }
 .menu {
   width: 70%;
