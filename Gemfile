@@ -74,6 +74,7 @@ gem "jquery-rails"
 gem "rufo"
 gem 'ransack'
 gem 'kaminari'
+gem 'fog-aws'
 
 group :production do
   gem 'pg'
