@@ -1,12 +1,10 @@
 class GummiesController < ApplicationController
   before_action :set_gummy, only: [:edit, :update, :show]
-  # before_action :move_to_about, except: [:show, :search, :news, :about]
+  before_action :move_to_about, except: [:show, :search, :news, :about]
 
   def index
     @q = Gummy.ransack(params[:q])
     @gummies = @q.result.includes(:user).order("created_at DESC").page(params[:page]).per(10)
-    # ransack導入前
-    # @gummies = Gummy.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -26,7 +24,7 @@ class GummiesController < ApplicationController
   end
 
   def update
-    gummy.update(gummy_params)
+    @gummy.update(gummy_params)
     redirect_to root_path
   end
 
