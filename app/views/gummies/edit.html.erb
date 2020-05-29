@@ -8,10 +8,24 @@
           <%= link_to root_path do %>
             <i class="far fa-list-alt icon"></i>
           <% end %>
-          <%= link_to gummy_path(@gummy), method: :delete, data: { confirm: "削除してもよろしいですか？" } do %>
-            <i class="fas fa-trash-alt icon"></i>
-          <% end %>
+            <i class="fas fa-trash-alt icon" id="modal" ></i>
         </p>
       <% end %>
   </div>
+
+  <div class="glay_layer"></div>
+  <div class="delete_modal">
+    <p class="delete_modal__message">※このグミを削除しますか？※</p>
+    <ul class="delete_modal__select">
+      <li>
+        <%= link_to gummy_path(@gummy), method: :delete, data: { confirm: "本当にいいんですね？" } do %>
+          <span class="delete_modal__select__btn">削除する！</span>
+        <% end %>
+      </li>
+      <li>
+        <span class="delete_modal__select__btn" id="modal_back">キャンセル</span>
+      </li>
+    </ul>
+  </div>
+
 </div>

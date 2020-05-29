@@ -81,3 +81,51 @@
     font-size: 0.8rem;
   }
 }
+
+// 削除モーダル
+// ------------------------------------
+.glay_layer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0.6;
+  filter:alpha(opacity=60);
+}
+.delete_modal {
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  right: 0;
+  width: 30%;
+  height: 30%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.delete_modal__message {
+  margin-top: 48px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.delete_modal__select {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+.delete_modal__select__btn {
+  margin: 24px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: $main-color;
+  padding: 8px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
