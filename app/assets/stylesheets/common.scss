@@ -21,6 +21,18 @@ a {
   color: #000;
 }
 
+// エラーメッセージ
+// ------------------------------------
+.alert {
+  color:#262626; 
+  background:#FFEBE8;
+  text-align: center;
+  border:2px solid #990000;
+  padding:12px;
+  font-weight:850;
+  margin-bottom: 16px;
+}
+
 // 大枠
 // ------------------------------------
 .layout {
@@ -62,6 +74,11 @@ header {
   &__title {
     font-size: 3rem;
     font-family: 'Fredoka One', cursive;
+    transition:0.5s;
+    border-radius: 70%;
+    &:hover {
+      background:pink;
+    }
   }
   &__list {
     display: flex;
@@ -96,7 +113,7 @@ footer {
   text-align: center;
   font-size: 0.8rem;
   position: absolute;
-  bottom: -72px;
+  bottom: -96px;
 }
 .menu {
   width: 70%;
@@ -109,6 +126,9 @@ footer {
     &__info {
       color: blue;
       margin-right: 12px;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -124,9 +144,15 @@ small {
 // ------------------------------------
 .pagination {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
+.first a, .next a, .prev a,
+.last a, .page a {
+  color: blue;
+}
+.first a:hover,
 .next a:hover,
+.prev a:hover,
 .last a:hover,
 .page a:hover {
   color: blue;

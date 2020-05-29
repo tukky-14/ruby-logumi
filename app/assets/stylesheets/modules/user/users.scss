@@ -44,3 +44,10 @@
   color: blue;
   text-decoration: underline;
 }
+
+.back_mypage {
+  color: blue;
+  &:hover {
+    text-decoration: underline;
+  }
+}
