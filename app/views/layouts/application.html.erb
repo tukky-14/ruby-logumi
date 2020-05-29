@@ -5,7 +5,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= favicon_link_tag("favicon.ico") %>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_include_tag "application" %>
@@ -48,13 +47,13 @@
         <div class="menu">
           <ul class="menu__list">
             <li>
-            <%= link_to "HOME　|", root_path, class: "menu__list__info" %>
+            <%= link_to "HOME", root_path, class: "menu__list__info" %>|　
             </li>
             <li>
-            <%= link_to "ABOUT　|", about_gummies_path, class: "menu__list__info" %>
+            <%= link_to "ABOUT", about_gummies_path, class: "menu__list__info" %>|　
             </li>
             <li>
-            <%= link_to "NEWS　|", news_gummies_path, class: "menu__list__info" %>
+            <%= link_to "NEWS", news_gummies_path, class: "menu__list__info" %>|　
             </li>
             <li>
             <%= link_to "OTHER", other_gummies_path, class: "menu__list__info" %>

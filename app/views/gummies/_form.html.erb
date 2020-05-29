@@ -1,22 +1,24 @@
 <%= form_with model: @gummy, local: true do |f| %>
   <p class="form__list">
-    <%= f.label :product, "商品名：", class: "form__list__label" %>
+    <%= f.label :product, "　商品名：", class: "form__list__label" %>
     <%= f.text_field :product, placeholder: "例）つぶグミ", class: "form__list__input" %>
   </p>
 
   <p class="form__list">
-    <%= f.label :image, "　画像：", class: "form__list__label" %>
+    <%= f.label :image, "　　画像：", class: "form__list__label" %>
     <%= f.file_field :image, placeholder: "画像", class: "form__list__input" %>
   </p>
   
   <p class="form__list">
-    <%= f.label :maker_id, "製造元：", class: "form__list__label" %>
+    <%= f.label :maker_id, "メーカー：", class: "form__list__label" %>
     <%= f.collection_select(:maker_id, Maker.all, :id, :maker, { prompt: "グミのメーカーを選択してください" }, { class: "form__list__input" }) %>
   </p>
 
 
   <%= f.label :content, "レビュー：", class: "form__list__label" %>
   <%= f.text_area :content, rows: "10", placeholder: "例）うまい！うまいうまい！", class: "form__list__area" %>
+
+  <%= render 'layouts/error_messages', model: f.object %>
   <%= f.submit "送信", class: "form__btn", data: { disable_with: "登録中" } %>
   
 <% end %>

@@ -17,7 +17,7 @@
       </ul>
       <% if user_signed_in? && current_user.id == @user_id %>
         <%= link_to edit_user_registration_path	do %>
-          <p class="profile-edit">編集</p>
+          <span class="profile-edit">編集</span>
         <% end %>
       <% end %>
     </div>
