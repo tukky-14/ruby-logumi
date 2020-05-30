@@ -5,6 +5,8 @@ class User < ApplicationRecord
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+        # メール認証
+        #  , :confirmable
 
   has_many :gummies
   has_many :comments
