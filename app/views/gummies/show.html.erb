@@ -21,17 +21,24 @@
         <li>レビュー：
           <span class="show__info__list--review"><%= simple_format(@gummy.content) %></span>
         </li>
+        
       </ul>
-        <p class="show__info__menu">
-          <%= link_to root_path do %>
-            <i class="far fa-list-alt icon"></i>
+      <ul class="sns_icons">
+        <li><a href="https://twitter.com"><i class="fab fa-twitter-square fa-2x icon"></i></a><li>
+        <li><a href="https://www.facebook.com"><i class="fab fa-facebook-square fa-2x icon"></i></a></li>
+        <li><a href="https://www.instagram.com"><i class="fab fa-instagram fa-2x icon"></i></a></li>
+      </ul>
+
+      <p class="show__info__menu">
+        <%= link_to root_path do %>
+          <i class="far fa-list-alt icon"></i>
+        <% end %>
+        <% if user_signed_in? && current_user.id == @gummy.user_id %>
+          <%= link_to edit_gummy_path(@gummy) do %>
+            <i class="far fa-edit icon"></i>
           <% end %>
-          <% if user_signed_in? && current_user.id == @gummy.user_id %>
-            <%= link_to edit_gummy_path(@gummy) do %>
-              <i class="far fa-edit icon"></i>
-            <% end %>
-          <% end %>
-        </p>
+        <% end %>
+      </p>
     </div>
   </div>
 

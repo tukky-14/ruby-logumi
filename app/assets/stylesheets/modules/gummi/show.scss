@@ -35,6 +35,19 @@
   }
 }
 
+// SNSリンク
+// ------------------------------------
+.sns_icons {
+  display: flex;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.fa-twitter-square,
+.fa-facebook-square {
+  margin-right: 1rem;
+}
+
 // コメント
 // ------------------------------------
 .container {
