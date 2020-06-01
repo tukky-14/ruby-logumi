@@ -3,14 +3,11 @@
 @import "variables.scss";
 @import "common.scss";
 
-// gem関連
+// font-awesome
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// Bootstrap使用検討中
-// @import "bootstrap";
-
-// devise関連
+// user関連
 @import "modules/user/*";
 
 // gummi関連

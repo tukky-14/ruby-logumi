@@ -122,26 +122,26 @@
   text-align: center;
   background-color: #fff;
   border-radius: 5px;
-}
-.delete_modal__message {
-  margin-top: 32px;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-.delete_modal__select {
-  display: flex;
-  justify-content: center;
-  margin-top: 48px;
-}
-.delete_modal__select__btn {
-  margin: 24px;
-  border: 1px solid #000;
-  border-radius: 5px;
-  background-color: $main-color;
-  padding: 8px;
-  cursor: pointer;
-  &:hover {
-    opacity: 0.8;
+  &__message {
+    margin-top: 32px;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  &__select {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    &__btn {
+      margin: 24px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      background-color: $main-color;
+      padding: 8px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 }
 

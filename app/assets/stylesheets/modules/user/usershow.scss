@@ -20,17 +20,17 @@
     margin-bottom: 16px;
     border-radius: 50%;
   }
-}
-.profile__info li {
-  margin-bottom: 8px;
-}
-.profile-edit {
-  color: blue;
-  display: inline-block;
-  width: 15%;
-  margin: 0 auto;
-  &:hover {
-    text-decoration: underline;
+  &__info li {
+    margin-bottom: 8px;
+  }
+  &-edit {
+    color: blue;
+    display: inline-block;
+    width: 15%;
+    margin: 0 auto;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -60,6 +60,8 @@
     &__img {
       display: block;
       margin: 0 auto;
+      width: 80px;
+      height: 120px;
     }
     &__list {
       display: flex;
