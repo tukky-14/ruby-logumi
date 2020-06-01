@@ -1,19 +1,8 @@
 $(function() {
 
-  let search_list = $('.items'); 
+    let search_list = $('.items'); 
 
-  // サインインしていたら編集アイコンを表示させる
-  function appendGummy(gummy) {
-    if (gummy.user_sign_in && gummy.user_sign_in.id == gummy.user_id) {
-      var current_user = `<li>
-                            <a href="/gummies/${gummy.id}/edit">
-                              <i class="far fa-edit icon"></i>
-                            </a>
-                          </li>`
-    } else {
-      var current_user = ""
-    }
-
+    function appendGummy(gummy) {
     // 【To do】画像がなかったらnoimage.pngを表示させたい
     if (gummy.image.url === null) {
       var gummyImage = `<img src="/assets/images/noimage.png" class="items__item__img">`
@@ -28,7 +17,7 @@ $(function() {
                   </a>
                   <ul class="items__item__list">
                     <li>${gummy.created_at}</li>
-                    ${current_user}
+                    <li>${gummy.name}</li>
                   </ul>
                 </div>`
     search_list.append(html);

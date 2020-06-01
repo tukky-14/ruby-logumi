@@ -5,7 +5,6 @@ class User < ApplicationRecord
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-        # メール認証
         #  , :confirmable
 
   has_many :gummies
@@ -15,6 +14,7 @@ class User < ApplicationRecord
   validates :introduction, length: { maximum: 200 } 
 
   def already_favorited?(gummy)
+    # selfはcurrent_user、そのグミにfavoriteがあるかどうか判定
     self.favorites.exists?(gummy_id: gummy.id)
   end
 end
