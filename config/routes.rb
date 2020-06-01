@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "gummies#index"
   resources :gummies do
     resources :comments, only: :create
+    resource :favorites, only: [:create, :destroy]
     collection do
       get 'search'
       get 'news'
