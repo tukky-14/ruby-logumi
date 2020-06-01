@@ -21,6 +21,18 @@
         <li>レビュー：
           <span class="show__info__list--review"><%= simple_format(@gummy.content) %></span>
         </li>
+        <li class="show__info__list--favorite">
+        <% if current_user.already_favorited?(@gummy)%>
+          <%= link_to gummy_favorites_path(@gummy), method: :delete do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to gummy_favorites_path(@gummy), method: :post do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+        <% end %>
+        <%= @gummy.favorites.count %>
+        </li>
         
       </ul>
       <ul class="sns_icons">
