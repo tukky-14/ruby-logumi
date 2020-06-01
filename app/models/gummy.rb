@@ -5,6 +5,7 @@ class Gummy < ApplicationRecord
   belongs_to :user
   belongs_to :maker
   has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   def self.search(search)
     return Gummy.all unless search

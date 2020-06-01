@@ -10,6 +10,11 @@ class User < ApplicationRecord
 
   has_many :gummies
   has_many :comments
-  validates :name, presence: true, uniqueness: true
+  has_many :favorites, dependent: :destroy
+  validates :name, presence: true, uniqueness: true, length: { maximum: 8 }
   validates :introduction, length: { maximum: 200 } 
+
+  def already_favorited?(gummy)
+    self.favorites.exists?(gummy_id: gummy.id)
+  end
 end
