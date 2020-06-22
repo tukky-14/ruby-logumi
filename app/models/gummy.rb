@@ -2,8 +2,10 @@ class Gummy < ApplicationRecord
   mount_uploader :image, ImageUploader
   validates :product, presence: true
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :maker
+  
   belongs_to :user
-  belongs_to :maker
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 

@@ -9,6 +9,7 @@ class GummiesController < ApplicationController
 
   def new
     @gummy = Gummy.new
+    @makers = Maker.all
   end
 
   def create
