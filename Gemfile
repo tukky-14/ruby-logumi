@@ -75,6 +75,7 @@ gem "jquery-rails"
 gem "rufo"
 gem 'ransack'
 gem 'kaminari'
+gem 'active_hash'
 gem 'fog-aws'
 
 group :production do

@@ -36,17 +36,9 @@ ActiveRecord::Schema.define(version: 2020_06_01_074805) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "maker_id", null: false
-    t.index ["maker_id"], name: "index_gummies_on_maker_id"
+    t.integer "maker_id"
     t.index ["product"], name: "index_gummies_on_product", length: 32
     t.index ["user_id"], name: "index_gummies_on_user_id"
-  end
-
-  create_table "makers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "maker"
-    t.text "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -68,6 +60,5 @@ ActiveRecord::Schema.define(version: 2020_06_01_074805) do
 
   add_foreign_key "comments", "gummies"
   add_foreign_key "comments", "users"
-  add_foreign_key "gummies", "makers"
   add_foreign_key "gummies", "users"
 end

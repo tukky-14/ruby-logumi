@@ -16,7 +16,7 @@
         <li>投稿日：<%= @gummy.created_at.to_s(:datetime_jp) %></li>
         <li>商品名：<%= @gummy.product %></li>
         <li>メーカー：
-        <%= link_to @gummy.maker.maker, @gummy.maker.url, target: :_blank, class: "show__info__list--maker" %>
+        <%= link_to @gummy.maker.name, @gummy.maker.url, target: :_blank, class: "show__info__list--maker" %>
         </li>
         <li>レビュー：
           <span class="show__info__list--review"><%= simple_format(@gummy.content) %></span>
