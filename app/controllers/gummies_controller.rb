@@ -1,6 +1,7 @@
 class GummiesController < ApplicationController
   before_action :set_gummy, only: [:edit, :update, :show]
   before_action :move_to_about, except: [:show, :search, :news, :about]
+  before_action :set_makers, only: [:new, :edit]
 
   def index
     @q = Gummy.ransack(params[:q])
@@ -9,7 +10,6 @@ class GummiesController < ApplicationController
 
   def new
     @gummy = Gummy.new
-    @makers = Maker.all
   end
 
   def create
@@ -63,6 +63,10 @@ class GummiesController < ApplicationController
 
   def set_gummy
     @gummy = Gummy.find(params[:id])
+  end
+
+  def set_makers
+    @makers = Maker.all
   end
 
   def move_to_about

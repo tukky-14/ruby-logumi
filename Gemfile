@@ -76,6 +76,7 @@ gem "rufo"
 gem 'ransack'
 gem 'kaminari'
 gem 'active_hash'
+gem 'gretel'
 gem 'fog-aws'
 
 group :production do
