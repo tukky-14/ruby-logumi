@@ -5,54 +5,59 @@
   justify-content: space-between;
   padding: 16px;
   position: relative;
-  background-color: rgba(142,209,224, .5);
   border-radius: 5px;
   &__image {
     width: 40%;
+    &__none {
+      width: 100%;
+      height: 100%;
+    }
   }
   &__info {
     width: 60%;
-    &__list li{
-      margin-bottom: 16px;
-    }
-    &__list__name,
-    &__list--maker {
-      color: blue;
-    }
-    &__list__name:hover,
-    &__list--maker:hover {
-      text-decoration: underline;
-    }
-    &__list--review {
-      display: block;
-      margin-top: 8px;
-      margin-left: 8px;
-    }
-    &__list--favorite {
-      position: absolute;
-      bottom: 0;
-      font-size: 1.2rem;
-    }
-    &__menu {
-      position: absolute;
-      bottom: 8px;
-      right: 8px;
-      font-size: 1.3rem;
+    &__table {
+      height: 400px;
+      width: 90%;
+      float: right;
+      &--head {
+        width: 25%;
+        font-size: 0.8rem;
+        border: 1px solid $main-text-color;
+        padding: 8px;
+        vertical-align: middle;
+        background-color: #eee;
+      }
+      &--data {
+        width: 75%;
+        text-align: left;
+        font-size: 0.8rem;
+        border: 1px solid $main-text-color;
+        padding: 8px;
+        vertical-align: middle;
+        background-color: #fff;
+        &__link {
+          color: $main-color;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        &__like {
+          color: red;
+        }
+      }
+      &--review {
+        width: 75%;
+        height: 150px;
+        text-align: left;
+        font-size: 0.8rem;
+        line-height: 1rem;
+        border: 1px solid $main-text-color;
+        padding: 8px;
+        vertical-align: middle;
+        background-color: #fff;
+      }
     }
   }
-}
-
-// SNSリンク
-// ------------------------------------
-.sns_icons {
-  display: flex;
-  position: absolute;
-  top: 5px;
-  right: 5px;
-}
-.fa-twitter-square,
-.fa-facebook-square {
-  margin-right: 1rem;
 }
 
 // コメント
@@ -60,35 +65,36 @@
 .container {
   padding: 16px;
   text-align: center;
-  width: 50%;
-  margin: 0 auto;
+  width: 80%;
+  margin: 0 auto 32px;
   position: relative;
+  background-color: #fff;
 }
 
-.comments h4{
-  margin-bottom: 16px;
-}
-.comments__field {
-  background-color: #fff;
-  border: 1px solid #000;
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
-  padding: 16px;
-  text-align: left;
-  margin-bottom: 16px;
-  &__text {
-    margin-bottom: 8px;
+.comments {
+  h4{
+    margin-bottom: 16px;
   }
-  &__text a {
-    color: $main-color;
+  &__field {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 16px 0;
+    text-align: left;
+    margin-bottom: 16px;
+    &__text {
+      margin-bottom: 16px;
+    }
+    &__text a {
+      color: $main-color;
+    }
   }
 }
 
 .comment-form {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   &__text {
-    width: 80%;
+    width: 100%;
     margin-bottom: 8px;
   }
   &__btn {
@@ -96,11 +102,34 @@
     width: 30%;
     background-color:  $main-color;
     cursor: pointer;
+    border: 1px solid $main-text-color;
+    padding: 4px;
   }
   &__alert {
     font-size: 0.8rem;
   }
 }
+
+// 商品編集と削除
+// ------------------------------------
+.show__change {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  &__edit {
+    margin: 0 auto;
+    width: 40%;
+    padding: 8px;
+    background-color: $main-color;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+
 
 // 削除モーダル
 // ------------------------------------

@@ -7,53 +7,61 @@
       <% if @gummy.image? %>
         <%= image_tag @gummy.image.url %>
       <% else %>
-        <%= image_tag "noimage.png", class: "items__item__img" %>
-        <% end %>
+        <%= image_tag "noimage.png", class: "show__image__none" %>
+      <% end %>
     </div>
     
     <div class="show__info">
-      <ul class="show__info__list">
-        <li>投稿者：
-          <%= link_to @gummy.user.name, user_path(@gummy.user.id), class: "show__info__list__name" %>
-        </li>
-        <li>投稿日：<%= @gummy.created_at.to_s(:datetime_jp) %></li>
-        <li>商品名：<%= @gummy.name %></li>
-        <li>メーカー：
-        <%= link_to @gummy.maker&.name, @gummy.maker&.url, target: :_blank, class: "show__info__list--maker" %>
-        </li>
-        <li>レビュー：
-          <span class="show__info__list--review"><%= simple_format(@gummy.content) %></span>
-        </li>
-        <li class="show__info__list--favorite">
-        <% if current_user.already_favorited?(@gummy)%>
-          <%= link_to gummy_favorites_path(@gummy), method: :delete do %>
-            <i class="fas fa-heart"></i>
-          <% end %>
-        <% else %>
-          <%= link_to gummy_favorites_path(@gummy), method: :post do %>
-            <i class="far fa-heart"></i>
-          <% end %>
-        <% end %>
-        <%= @gummy.favorites.count %>
-        </li>
-        
-      </ul>
-      <ul class="sns_icons">
-        <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter-square fa-2x icon"></i></a><li>
-        <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square fa-2x icon"></i></a></li>
-        <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram fa-2x icon"></i></a></li>
-      </ul>
+      <table class="show__info__table">
+        <tbody>
+          <tr>
+            <th class="show__info__table--head">投稿者</th>
+            <td class="show__info__table--data">
+              <%= link_to @gummy.user.name, user_path(@gummy.user.id), class: "show__info__table--data__link" %>
+            </td>
+          </tr>
+          <tr>
+            <th class="show__info__table--head">投稿日</th>
+            <td class="show__info__table--data">
+              <%= @gummy.created_at.to_s(:datetime_jp) %>
+            </td>
+          </tr>
+          <tr>
+            <th class="show__info__table--head">商品名</th>
+            <td class="show__info__table--data">
+              <%= @gummy.name %>
+            </td>
+          </tr>
+          <tr>
+            <th class="show__info__table--head">メーカー</th>
+            <td class="show__info__table--data">
+              <%= link_to @gummy.maker&.name, @gummy.maker&.url,class: "show__info__table--data__link", target: :_blank %>
+            </td>
+          </tr>
+          <tr>
+            <th class="show__info__table--head">いいねの数</th>
+            <td class="show__info__table--data">
+              <% if current_user.already_favorited?(@gummy)%>
+                <%= link_to gummy_favorites_path(@gummy), method: :delete do %>
+                <i class="fas fa-heart show__info__table--data__like"></i>
+                <% end %>
+              <% else %>
+                <%= link_to gummy_favorites_path(@gummy), method: :post do %>
+                <i class="far fa-heart"></i>
+                <% end %>
+              <% end %>
+              <%= @gummy.favorites.count %>
+            </td>
+          </tr>
+          <tr>
+            <th class="show__info__table--head">レビュー</th>
+            <td class="show__info__table--review">
+              <%= simple_format(@gummy.content) %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-      <p class="show__info__menu">
-        <%= link_to root_path do %>
-          <i class="far fa-list-alt icon"></i>
-        <% end %>
-        <% if user_signed_in? && current_user.id == @gummy.user_id %>
-          <%= link_to edit_gummy_path(@gummy) do %>
-            <i class="far fa-edit icon"></i>
-          <% end %>
-        <% end %>
-      </p>
     </div>
   </div>
 
@@ -71,6 +79,7 @@
         <% end %>
       </div>
     </div>
+
     <div class="comment-form">
       <% if current_user %>
         <%= form_with(model: [@gummy, @comment], local: true, id: "new-comment") do |f| %>
@@ -82,4 +91,15 @@
       <% end %>
     </div>
   </div>
+
+  <% if user_signed_in? && current_user.id == @gummy.user_id %>
+    <div class="show__change">
+      <div class="show__change__edit">
+        <%= link_to edit_gummy_path(@gummy) do %>
+          <i class="far fa-edit icon"></i>
+          商品の編集
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
