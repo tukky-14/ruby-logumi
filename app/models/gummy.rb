@@ -11,7 +11,7 @@ class Gummy < ApplicationRecord
 
   def self.search(search)
     return Gummy.all unless search
-    Gummy.where('product LIKE(?)', "%#{search}%")
+    Gummy.where('name LIKE(?)', "%#{search}%")
   end
 
 end

@@ -36,10 +36,11 @@ class GummiesController < ApplicationController
 
   def search
     @gummies = Gummy.search(params[:keyword]).order("created_at DESC")
-    respond_to do |format|
-      format.html
-      format.json
-    end
+    # インクリメンタルサーチ
+    # respond_to do |format|
+    #   format.html
+    #   format.json
+    # end
   end
 
   def news
