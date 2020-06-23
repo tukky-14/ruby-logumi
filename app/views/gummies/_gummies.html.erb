@@ -9,10 +9,8 @@
       <% end %>
     <% end %>
       <ul class="items__item__list">
-        <li><%= gummy.created_at.to_s(:datetime_jp) %></li>
         <li><%= gummy.user.name %></li>
         <li>
-        <%# already_favorited?はuser.rbで定義したfavoriteがあるかどうかを判定するメソッド %>
         <% if current_user.already_favorited?(gummy)%>
           <%= link_to gummy_favorites_path(gummy), method: :delete do %>
             <i class="fas fa-heart"></i>
