@@ -28,13 +28,13 @@ header {
       margin-left: 1rem;
       padding: 8px 16px;
       font-size: 1.1rem;
-      border: 1px solid #000;
+      border: 1px solid $main-text-color;
       border-radius: 5px;
+      color: $main-text-color;
       background-color: $main-color;
-      opacity: 0.7;
       cursor: pointer;
       &:hover {
-        opacity: 1;
+        opacity: 0.8;
       }
     }
   }

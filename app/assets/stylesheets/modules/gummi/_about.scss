@@ -1,27 +1,26 @@
 .about-site {
   padding: 24px;
-  color: #494949;
+  color: $main-text-color;
   &__title {
     font-size: 1.2rem;
     margin-bottom: 8px;
-    padding: 0.25em 0.5em;/*上下 左右の余白*/
-    color: #494949;/*文字色*/
-    background: transparent;/*背景透明に*/
-    border-left: solid 5px #7db4e6;/*左線*/
+    padding: 0.25em 0.5em;
+    color: $main-text-color;
+    background: transparent;
+    border-left: solid 5px #7db4e6;
   }
   &__text {
-    color: #494949;/*文字色*/
+    color: $main-text-color;
     line-height: 1.7rem;
     padding-left: 1rem;
   }
   &__img {
     display: block;
-    // margin: 0 auto;
     width: 50%;
     margin-bottom: 8px;
   }
   & ul li{
-    color: #494949;
+    color: $main-text-color;
     list-style: inside;
     padding-left: 2rem;
   }
@@ -29,26 +28,21 @@
 
 .registration {
   text-align: center;
+  padding: 32px;
   &__text {
-    color: #494949;
+    color: $main-text-color;
     margin-bottom: 16px;
   }
   &__btn {
-    display: inline-block;
     padding: 8px 16px;
-    margin-bottom: 32px;
     font-size: 1.1rem;
-    color: #494949;
-    text-decoration: none;
-    background: $main-color;
-    border-bottom: solid 4px #627295;
+    border: 1px solid $main-text-color;
     border-radius: 5px;
+    color: $main-text-color;
+    background-color: $main-color;
     cursor: pointer;
-    &:active {
-      /*ボタンを押したとき*/
-      -webkit-transform: translateY(4px);
-      transform: translateY(4px);/*下に動く*/
-      border-bottom: none;/*線を消す*/
+    &:hover {
+      opacity: 0.8;
     }
   }
 }

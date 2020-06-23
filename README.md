@@ -11,6 +11,10 @@
 - Heroku URL  
 https://logumi.herokuapp.com/  
 
+- 認証
+  - ユーザ：admin
+  - パスワード：0909
+
 - テストアカウント
    - メールアドレス：test@sample  
    - パスワード：000000
