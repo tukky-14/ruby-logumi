@@ -22,6 +22,10 @@ crumb :product_news do
   link "グミニュース", news_gummies_path
 end
 
+crumb :product_other do
+  link "その他", news_gummies_path
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

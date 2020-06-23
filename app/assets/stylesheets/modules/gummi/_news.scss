@@ -1,16 +1,9 @@
-.news-title {
-  text-align: center;
-  padding: 8px;
-}
 .news {
   display: flex;
   height: 100vh;
   width: 80%;
-  overflow: scroll;
-  border: 1px solid #000;
   margin: 0 auto 16px;
   border-radius: 5px;
-  box-shadow: 5px 5px 5px;
   &__main {
     width: 70%;
     padding: 32px 16px;
@@ -22,7 +15,7 @@
 }
 .news__main__title,
 .news__side__title {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   padding: 8px 0;
   text-align: center;
   font-weight: bold;
