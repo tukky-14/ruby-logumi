@@ -2,9 +2,6 @@
 <%= render "layouts/breadcrumbs" %>
 
 <div class="wrapper">
-  <!-- <h2 class="profile-name"><strong><i class="fas fa-user-circle"></i> <%= @name %>さんのマイページ</strong></h2>
-  <hr> -->
-
   <div class="usershow">
     <div class="profile">
       <ul class="profile__info">
@@ -30,7 +27,7 @@
       <div class="useritems">
         <% @gummies.each do |gummy| %>
           <div class="useritems__item">
-            <p class="useritems__item__title"><%= gummy.product %></p>
+            <p class="useritems__item__title"><%= gummy.name %></p>
             <%= link_to gummy_path(gummy) do %>
               <% if gummy.image? %>
                 <%= image_tag gummy.image.url,  class: "useritems__item__img" %>

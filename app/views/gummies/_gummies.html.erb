@@ -1,6 +1,6 @@
 <% @gummies.each do |gummy| %>
   <div class="items__item">
-    <p class="items__item__title"><%= gummy.product %></p>
+    <p class="items__item__title"><%= gummy.name %></p>
     <%= link_to gummy_path(gummy) do %>
       <% if gummy.image? %>
         <%= image_tag gummy.image.url, class: "items__item__img" %>

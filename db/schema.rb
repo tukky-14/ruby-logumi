@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_01_074805) do
+ActiveRecord::Schema.define(version: 2020_06_23_005920) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text"
@@ -30,14 +30,14 @@ ActiveRecord::Schema.define(version: 2020_06_01_074805) do
   end
 
   create_table "gummies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "product", null: false
+    t.string "name", null: false
     t.text "content"
     t.string "image"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "maker_id"
-    t.index ["product"], name: "index_gummies_on_product", length: 32
+    t.index ["name"], name: "index_gummies_on_name"
     t.index ["user_id"], name: "index_gummies_on_user_id"
   end
 

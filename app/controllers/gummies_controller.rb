@@ -1,7 +1,7 @@
 class GummiesController < ApplicationController
   before_action :set_gummy, only: [:edit, :update, :show]
   before_action :move_to_about, except: [:show, :search, :news, :about]
-  before_action :set_makers, only: [:new, :edit]
+  before_action :set_makers, only: [:new,:create, :edit, :update]
 
   def index
     @q = Gummy.ransack(params[:q])
@@ -58,7 +58,7 @@ class GummiesController < ApplicationController
 
   private
   def gummy_params
-    params.require(:gummy).permit(:product, :image, :content, :maker_id).merge(user_id: current_user.id)
+    params.require(:gummy).permit(:name, :image, :content, :maker_id).merge(user_id: current_user.id)
   end
 
   def set_gummy

@@ -45,6 +45,15 @@ https://logumi.herokuapp.com/
 #### Association
 - belongs_to :user
 
+### favoritsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|gummy_id|integer|null: false, foreign_key: true|
+#### Association
+- belongs_to :user
+- belongs_to :gummy
+
 ### commentsテーブル
 |Column|Type|Options|
 |------|----|-------|

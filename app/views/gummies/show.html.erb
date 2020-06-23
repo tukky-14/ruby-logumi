@@ -17,7 +17,7 @@
           <%= link_to @gummy.user.name, user_path(@gummy.user.id), class: "show__info__list__name" %>
         </li>
         <li>投稿日：<%= @gummy.created_at.to_s(:datetime_jp) %></li>
-        <li>商品名：<%= @gummy.product %></li>
+        <li>商品名：<%= @gummy.name %></li>
         <li>メーカー：
         <%= link_to @gummy.maker.name, @gummy.maker.url, target: :_blank, class: "show__info__list--maker" %>
         </li>
