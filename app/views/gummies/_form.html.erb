@@ -1,21 +1,24 @@
 <%= form_with model: @gummy, local: true do |f| %>
-  <p class="form__list">
-    <%= f.label :image, "画像", class: "form__list__label" %>
-    <%= f.file_field :image, placeholder: "画像", class: "form__list__input" %>
-  </p>
+  <div class="form__image">
+  </div>
 
-  <p class="form__list">
+  <div class="form__list">
+    <%= f.label :image, "画像", class: "form__list__label" %>
+    <%= f.file_field :image, placeholder: "画像", class: "form__list__input", id: "form__list__image" %>
+  </div>
+
+  <div class="form__list">
     <%= f.label :name, "商品名", class: "form__list__label" %>
     <span class="form__list__label__need">必須</span>
     <%= f.text_field :name, placeholder: "例）つぶグミ", class: "form__list__input" %>
-  </p>
+  </div>
 
   
-  <p class="form__list">
+  <div class="form__list">
     <%= f.label :maker_id, "メーカー", class: "form__list__label" %>
     <span class="form__list__label__need">必須</span>
     <%= f.collection_select(:maker_id, @makers, :id, :name, { prompt: "グミのメーカーを選択してください" }, { class: "form__list__input" }) %>
-  </p>
+  </div>
 
 
   <%= f.label :content, "レビュー", class: "form__list__label" %>
