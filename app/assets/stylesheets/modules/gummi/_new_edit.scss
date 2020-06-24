@@ -1,0 +1,76 @@
+.post_title {
+  margin: 32px 0 16px;
+  font-size: 1.2rem;
+  text-align: center;  
+}
+
+.gummy_delete {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  &__btn {
+    margin: 0 auto;
+    width: 40%;
+    padding: 8px;
+    background-color: $main-color;
+    border: 1px solid $main-text-color;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+// 削除モーダル
+// ------------------------------------
+.glay_layer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0.6;
+  filter:alpha(opacity=60);
+}
+.delete_modal {
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  right: 0;
+  width: 30%;
+  height: 30%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+  &__message {
+    margin-top: 32px;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  &__select {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    &__btn {
+      margin: 24px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      background-color: $main-color;
+      padding: 8px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.warning {
+  color: red;
+  margin-top: 1rem;
+}
