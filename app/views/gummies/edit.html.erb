@@ -2,16 +2,13 @@
 <%= render "layouts/breadcrumbs" %>
 
 <div class="wrapper">
+  <h4 class="post_title">グミを編集しよう！</h4>
   <div class="form">
-    <h4>グミを編集しよう！</h4>
     <%= render "form"%>
     
     <% if user_signed_in? && current_user.id == @gummy.user_id %>
         <p class="form__menu">
-          <%= link_to root_path do %>
-            <i class="far fa-list-alt icon"></i>
-          <% end %>
-            <i class="fas fa-trash-alt icon" id="modal" ></i>
+          <i class="fas fa-trash-alt icon" id="modal" ></i>
         </p>
       <% end %>
   </div>

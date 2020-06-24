@@ -3,10 +3,21 @@
   width: 50%;
   margin: 0 auto;
   position: relative;
-  & h4 {
-    margin-bottom: 32px;
-    font-size: 1.2rem;
+  &__image__preview {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+  }
+  &__image__delete {
+    width: 50%;
     text-align: center;
+    color: red;
+    background-color: #eee;
+    margin: 0 auto;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   &__list {
     padding: auto;
@@ -58,9 +69,4 @@
     right: 15px;
     font-size: 1.3rem;
   }
-}
-
-#gummy_maker {
-  width: 80%;
-  height: 32px;
 }
