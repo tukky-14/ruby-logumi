@@ -3,15 +3,16 @@
 
 <div class="wrapper">
   <h4 class="post_title">グミを編集しよう！</h4>
-  <div class="form">
-    <%= render "form"%>
+  <%= render "form"%>
     
-    <% if user_signed_in? && current_user.id == @gummy.user_id %>
-        <p class="form__menu">
-          <i class="fas fa-trash-alt icon" id="modal" ></i>
-        </p>
-      <% end %>
-  </div>
+  <% if user_signed_in? && current_user.id == @gummy.user_id %>
+    <div class="gummy_delete">
+      <div class="gummy_delete__btn" id="modal">
+          <i class="fas fa-trash-alt icon"></i>
+          商品の削除
+      </div>
+    </div>
+  <% end %>
 
   <div class="glay_layer"></div>
   <div class="delete_modal">

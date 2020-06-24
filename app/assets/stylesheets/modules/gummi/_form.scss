@@ -61,12 +61,4 @@
       background-color: $main-color;
     }
   }
-  // 編集のみ
-  // ------------------------------------
-  &__menu {
-    position: absolute;
-    bottom: 5px;
-    right: 15px;
-    font-size: 1.3rem;
-  }
 }

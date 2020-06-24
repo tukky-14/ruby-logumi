@@ -93,8 +93,8 @@
   </div>
 
   <% if user_signed_in? && current_user.id == @gummy.user_id %>
-    <div class="show__change">
-      <div class="show__change__edit">
+    <div class="show__edit">
+      <div class="show__edit__btn">
         <%= link_to edit_gummy_path(@gummy) do %>
           <i class="far fa-edit icon"></i>
           商品の編集

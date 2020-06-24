@@ -22,33 +22,22 @@
       <% end %>
     </div>
 
-    <div class="contents">
-      <span class="contents__count"><i class="fas fa-list"></i>全<%= @gummies.count %>件の投稿</span>
-      <div class="useritems">
+    <div class="useritems">
+      <span class="useritems__count"><i class="fas fa-list"></i>全<%= @gummies.count %>件の投稿</span>
+      <div class="useritems__list">
         <% @gummies.each do |gummy| %>
-          <div class="useritems__item">
-            <p class="useritems__item__title"><%= gummy.name %></p>
+          <div class="useritems__list__item">
+            <p class="useritems__list__item__title"><%= gummy.name %></p>
             <%= link_to gummy_path(gummy) do %>
               <% if gummy.image? %>
-                <%= image_tag gummy.image.url,  class: "useritems__item__img" %>
+                <%= image_tag gummy.image.url,  class: "useritems__list__item__img" %>
               <% else %>
-                <%= image_tag "noimage.png", class: "useritems__item__img" %>
+                <%= image_tag "noimage.png", class: "useritems__list__item__img" %>
               <% end %>
             <% end %>
-              <ul class="useritems__item__list">
-                <li><%= gummy.created_at.to_s(:datetime_jp) %></li>
-                <% if user_signed_in? && current_user.id == gummy.user_id %>
-                  <li>
-                    <%= link_to edit_gummy_path(gummy) do %>
-                      <i class="far fa-edit icon"></i>
-                    <% end %>
-                  </li>
-                <% end %>
-              </ul>
           </div>
         <% end %>
       </div>
     </div>
   </div>
-
 </div>
