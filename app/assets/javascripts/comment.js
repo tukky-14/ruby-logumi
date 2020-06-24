@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(comment) {
-    var html = `<p class="comments__field__text">
+    const html = `<p class="comments__field__text">
                 <a href=/users/${comment.user_id}>${comment.user_name}</a>
                 ：
                 ${comment.text}
@@ -9,8 +9,8 @@ $(function(){
   }
   $('#new-comment').on('submit', function(e){
     e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action')
+    const formData = new FormData(this);
+    const url = $(this).attr('action')
     $.ajax({
       url: url,
       type: "POST",
@@ -20,7 +20,7 @@ $(function(){
       contentType: false
     })
     .done(function(data) {
-      var html = buildHTML(data);
+      const html = buildHTML(data);
       $('.comments__field').append(html);
       $('.comment-form__text').val('');
       $('.comment-form__btn').prop('disabled', false);
