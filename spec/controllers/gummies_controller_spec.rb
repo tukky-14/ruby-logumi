@@ -35,5 +35,4 @@ describe GummiesController do
   #     expect(response).to render_template :index
   #   end
   # end
-
 end
