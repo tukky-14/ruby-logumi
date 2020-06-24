@@ -1,5 +1,3 @@
-// 投稿画面の画像プレビュー表示
-
 $(function(){
   $('#form__list__image').change(function(){
     const file = $('input[type="file"]').prop('files')[0];
