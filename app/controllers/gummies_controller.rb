@@ -1,7 +1,7 @@
 class GummiesController < ApplicationController
   before_action :set_gummy, only: [:edit, :update, :show]
   before_action :move_to_about, except: [:show, :search, :news, :about]
-  before_action :set_makers, only: [:new,:create, :edit, :update]
+  before_action :set_makers, only: [:new, :create, :edit, :update]
 
   def index
     @q = Gummy.ransack(params[:q])
@@ -21,8 +21,7 @@ class GummiesController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @gummy.update(gummy_params)
@@ -43,14 +42,11 @@ class GummiesController < ApplicationController
     # end
   end
 
-  def news
-  end
+  def news; end
 
-  def about
-  end
+  def about; end
 
-  def other
-  end
+  def other; end
 
   def destroy
     Gummy.find(params[:id]).destroy
@@ -58,6 +54,7 @@ class GummiesController < ApplicationController
   end
 
   private
+
   def gummy_params
     params.require(:gummy).permit(:name, :image, :content, :maker_id).merge(user_id: current_user.id)
   end
