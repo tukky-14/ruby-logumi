@@ -7,19 +7,24 @@
   &__main {
     width: 70%;
     padding: 32px 16px;
+    &__title {
+      font-size: 0.9rem;
+      padding: 8px 0;
+      text-align: center;
+      font-weight: bold;
+    }
+    &__content {
+      margin-bottom: 24px;
+    }
   }
   &__side {
     width: 30%;
     padding: 32px 16px;
+    &__title {
+      font-size: 0.9rem;
+      padding: 8px 0;
+      text-align: center;
+      font-weight: bold;
+    }
   }
-}
-.news__main__title,
-.news__side__title {
-  font-size: 0.9rem;
-  padding: 8px 0;
-  text-align: center;
-  font-weight: bold;
-}
-iframe {
-  height: 600px;
 }
