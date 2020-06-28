@@ -46,7 +46,9 @@ class GummiesController < ApplicationController
 
   def about; end
 
-  def other; end
+  def rank
+    @gummies = Gummy.find(Favorite.group(:gummy_id).order('count(gummy_id) desc').limit(10).pluck(:gummy_id))
+  end
 
   def destroy
     Gummy.find(params[:id]).destroy

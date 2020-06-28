@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get 'search'
       get 'news'
       get 'about'
-      get 'other'
+      get 'rank'
     end
   end
   resources :users, only: :show

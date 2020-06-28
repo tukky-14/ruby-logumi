@@ -1,0 +1,28 @@
+<% breadcrumb :product_other %>
+<%= render "layouts/breadcrumbs" %>
+
+<div class="wrapper2">
+  <h2 class="rank-title">いいねランキング TOP10</h2>
+  <% @gummies.each do |gummy| %>
+    <%= link_to root_path, class:"rank" do %>
+      <div class="rank__item">
+        <div class="rank__item__preview">
+          <%= image_tag gummy.image.url, class: "rank__item__preview__img" %>
+        </div>
+        <div class="rank__item__text">
+          <div class="rank__item__text__gummi">
+            <%= gummy.name %>
+            /
+            <%= gummy.maker.name %>
+          </div>
+          <div>いいねの数：
+            <%= gummy.favorites.count %>
+          </div>
+        </div>
+        <div class="rank__item__next">
+          <i class="fas fa-angle-right"></i>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

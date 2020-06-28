@@ -1,11 +1,41 @@
-.other_title {
-  text-align: center;
-  line-height: 8rem;
-  font-size: 2rem;
-}
-.other_youtube {
-  width: 800px;
-  height: 500px;
-  display: block;
+.wrapper2 {
+  width: 600px;
   margin: 0 auto;
+  padding: 32px;
+}
+
+.rank-title {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.rank {
+  &__item {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    margin-bottom: 8px;
+    &__preview {
+      width: 20%;
+      text-align: center;
+      &__img {
+        width: 50px;
+      }
+    }
+    &__text {
+      width: 70%;
+      &__gummi {
+        margin-bottom: 8px;
+      }
+    }
+    &__next {
+      width: 10%;
+      text-align: center;
+    }
+    &:hover {
+      background-color: #eee;
+    }
+  }
 }
