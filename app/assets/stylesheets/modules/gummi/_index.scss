@@ -63,3 +63,26 @@
   background-color: rgba(142,209,224, .5);
   border-radius: 10px;
 }
+
+@media screen and (max-width: 959px) {
+  .search {
+    width: 80%
+  }
+  .items__item {
+    width: calc(100% / 3);
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .search {
+    width: 100%;
+    text-align: center;    
+  }
+  .items__item {
+    width: 100%;
+    &__img {
+      width: 70%;
+      height: auto;
+    }
+  }
+}

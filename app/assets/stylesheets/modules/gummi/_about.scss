@@ -19,7 +19,7 @@
     width: 50%;
     margin-bottom: 8px;
   }
-  & ul li{
+  &__merit {
     color: $main-text-color;
     list-style: inside;
     padding-left: 2rem;
@@ -44,5 +44,15 @@
     &:hover {
       opacity: 0.8;
     }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .about-site__text,
+  .about-site__merit {
+    font-size: 0.8rem;
+  }
+  .registration__text {
+    font-size: 0.9rem;
   }
 }
