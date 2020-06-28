@@ -5,17 +5,18 @@
   <div class="usershow">
     <div class="profile">
       <ul class="profile__info">
-        <%- if @image.url %>
-          <li><%= image_tag @image.url, class: "profile__img" %></li>
+        <li class="profile__info__name"><%= @user.name %></li>
+        <%- if @user.image.url %>
+          <li><%= image_tag @user.image.url, class: "profile__info__img" %></li>
         <% else %>
-          <li><%= image_tag "noimage.png", class: "profile__img" %></li>
+          <li><%= image_tag "noimage.png", class: "profile__info__img" %></li>
         <% end %>
         <li>【好きなグミ】</li>
-        <li><%= @like %></li><br>
+        <li><%= @user.like %></li><br>
         <li> 【自己紹介】</li>
-        <li><%= simple_format(@introduction) %></li><br>
+        <li><%= simple_format(@user.introduction) %></li><br>
       </ul>
-      <% if user_signed_in? && current_user.id == @user_id %>
+      <% if user_signed_in? && current_user.id == @user.id %>
         <%= link_to edit_user_registration_path	do %>
           <span class="profile-edit">編集</span>
         <% end %>
