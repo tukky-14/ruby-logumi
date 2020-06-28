@@ -5,7 +5,7 @@ class GummiesController < ApplicationController
 
   def index
     @q = Gummy.ransack(params[:q])
-    @gummies = @q.result.includes(:user).order("created_at DESC").page(params[:page]).per(10)
+    @gummies = @q.result.includes(:user).order("created_at DESC").page(params[:page]).per(15)
   end
 
   def new
@@ -35,11 +35,6 @@ class GummiesController < ApplicationController
 
   def search
     @gummies = Gummy.search(params[:keyword]).order("created_at DESC")
-    # インクリメンタルサーチ
-    # respond_to do |format|
-    #   format.html
-    #   format.json
-    # end
   end
 
   def news; end
