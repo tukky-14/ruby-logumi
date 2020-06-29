@@ -92,6 +92,19 @@
     </div>
   </div>
 
+  <div class="show_move clearfix">
+    <% if @gummy.next.present? %>
+      <p>
+        <%= link_to "←次の商品", gummy_path(@gummy.next), class: "show_move__next"%>
+      </p>
+    <% end %>
+    <% if @gummy.previous.present? %>
+      <p>
+        <%= link_to "前の商品→", gummy_path(@gummy.previous), class: "show_move__prev"%>
+      </p>
+    <% end %>
+  </div>
+
   <% if user_signed_in? && current_user.id == @gummy.user_id %>
     <div class="show__edit">
       <div class="show__edit__btn">
