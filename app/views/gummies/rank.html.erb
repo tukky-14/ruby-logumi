@@ -4,7 +4,7 @@
 <div class="wrapper2">
   <h2 class="rank-title">いいねランキング TOP10</h2>
   <% @gummies.each do |gummy| %>
-    <%= link_to root_path, class:"rank" do %>
+    <%= link_to gummy_path(gummy.id), class:"rank" do %>
       <div class="rank__item">
         <div class="rank__item__preview">
           <%= image_tag gummy.image.url, class: "rank__item__preview__img" %>
